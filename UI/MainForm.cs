@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryUI
+namespace UI
 {
     public partial class MainForm : Form
     {
@@ -23,10 +23,31 @@ namespace LibraryUI
         }
 
         private void btnStudents_Click_1(object sender, EventArgs e)
-        { 
+        {
             this.Hide();
             StudentForm studentForm = new StudentForm();
             studentForm.Show();
+        }
+
+        //private void btnBooks_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    BookForm bookForm = new BookForm();
+        //    bookForm.Show();
+        //}
+
+        //private void btnIssueBooks_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    IssueBookForm issueBookForm = new IssueBookForm();
+        //    issueBookForm.Show();
+        //}
+
+        private void btnLibrarians_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LibrarianForm librarianForm = new LibrarianForm();
+            librarianForm.Show();
         }
 
         private void btnBooks_Click(object sender, EventArgs e)

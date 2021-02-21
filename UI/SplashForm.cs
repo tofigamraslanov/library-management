@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryUI
+namespace UI
 {
     public partial class SplashForm : Form
     {
@@ -18,19 +18,19 @@ namespace LibraryUI
         }
 
         int startPoint = 0;
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            startPoint += 1;
-            myProgress.Value = startPoint;
-            if (myProgress.Value == 100)
-            {
-                myProgress.Value = 0;
-                timer1.Stop(); ;
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-                this.Hide();
-            }
-        }
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    startPoint += 1;
+        //    myProgress.Value = startPoint;
+        //    if (myProgress.Value == 100)
+        //    {
+        //        myProgress.Value = 0;
+        //        timer1.Stop(); ;
+        //        LoginForm loginForm = new LoginForm();
+        //        loginForm.Show();
+        //        this.Hide();
+        //    }
+        //}
 
         private void SplashForm_Load(object sender, EventArgs e)
         {

@@ -1,5 +1,5 @@
 ﻿
-namespace LibraryUI
+namespace UI
 {
     partial class MainForm
     {
@@ -40,9 +40,9 @@ namespace LibraryUI
             this.label1 = new System.Windows.Forms.Label();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnBooks = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnIssueBooks = new System.Windows.Forms.Button();
+            this.btnReturnBooks = new System.Windows.Forms.Button();
+            this.btnLibrarians = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,16 +56,18 @@ namespace LibraryUI
             this.panelNavbar.Controls.Add(this.pictureBox1);
             this.panelNavbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNavbar.Location = new System.Drawing.Point(0, 0);
+            this.panelNavbar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelNavbar.Name = "panelNavbar";
-            this.panelNavbar.Size = new System.Drawing.Size(884, 40);
+            this.panelNavbar.Size = new System.Drawing.Size(1031, 46);
             this.panelNavbar.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(840, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(980, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(37, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -78,19 +80,21 @@ namespace LibraryUI
             this.panelFooter.Controls.Add(this.button7);
             this.panelFooter.Controls.Add(this.button6);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 582);
+            this.panelFooter.Location = new System.Drawing.Point(0, 671);
+            this.panelFooter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(884, 56);
+            this.panelFooter.Size = new System.Drawing.Size(1031, 65);
             this.panelFooter.TabIndex = 1;
             // 
             // button8
             // 
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(586, 0);
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button8.Location = new System.Drawing.Point(684, 0);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(298, 56);
+            this.button8.Size = new System.Drawing.Size(348, 65);
             this.button8.TabIndex = 2;
             this.button8.Text = "Tips";
             this.button8.UseVisualStyleBackColor = true;
@@ -99,10 +103,11 @@ namespace LibraryUI
             // 
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(293, 0);
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button7.Location = new System.Drawing.Point(342, 0);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(295, 56);
+            this.button7.Size = new System.Drawing.Size(344, 65);
             this.button7.TabIndex = 1;
             this.button7.Text = "Dashboard";
             this.button7.UseVisualStyleBackColor = true;
@@ -111,10 +116,11 @@ namespace LibraryUI
             // 
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(295, 56);
+            this.button6.Size = new System.Drawing.Size(344, 65);
             this.button6.TabIndex = 0;
             this.button6.Text = "About";
             this.button6.UseVisualStyleBackColor = true;
@@ -124,17 +130,19 @@ namespace LibraryUI
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMain.Location = new System.Drawing.Point(0, 88);
+            this.panelMain.Location = new System.Drawing.Point(0, 101);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(884, 494);
+            this.panelMain.Size = new System.Drawing.Size(1031, 570);
             this.panelMain.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(64, 46);
+            this.label1.Location = new System.Drawing.Point(75, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 34);
             this.label1.TabIndex = 3;
@@ -144,11 +152,12 @@ namespace LibraryUI
             // 
             this.btnStudents.FlatAppearance.BorderSize = 0;
             this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStudents.ForeColor = System.Drawing.Color.White;
-            this.btnStudents.Location = new System.Drawing.Point(357, 47);
+            this.btnStudents.Location = new System.Drawing.Point(416, 54);
+            this.btnStudents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(85, 36);
+            this.btnStudents.Size = new System.Drawing.Size(99, 42);
             this.btnStudents.TabIndex = 4;
             this.btnStudents.Text = "Students";
             this.btnStudents.UseVisualStyleBackColor = true;
@@ -158,75 +167,81 @@ namespace LibraryUI
             // 
             this.btnBooks.FlatAppearance.BorderSize = 0;
             this.btnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBooks.ForeColor = System.Drawing.Color.White;
-            this.btnBooks.Location = new System.Drawing.Point(448, 47);
+            this.btnBooks.Location = new System.Drawing.Point(523, 54);
+            this.btnBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBooks.Name = "btnBooks";
-            this.btnBooks.Size = new System.Drawing.Size(70, 35);
+            this.btnBooks.Size = new System.Drawing.Size(82, 40);
             this.btnBooks.TabIndex = 5;
             this.btnBooks.Text = "Books";
             this.btnBooks.UseVisualStyleBackColor = true;
             this.btnBooks.Click += new System.EventHandler(this.btnBooks_Click);
             // 
-            // button3
+            // btnIssueBooks
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(524, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 34);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Issue Books";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnIssueBooks.FlatAppearance.BorderSize = 0;
+            this.btnIssueBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIssueBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIssueBooks.ForeColor = System.Drawing.Color.White;
+            this.btnIssueBooks.Location = new System.Drawing.Point(611, 54);
+            this.btnIssueBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnIssueBooks.Name = "btnIssueBooks";
+            this.btnIssueBooks.Size = new System.Drawing.Size(118, 39);
+            this.btnIssueBooks.TabIndex = 6;
+            this.btnIssueBooks.Text = "Issue Books";
+            this.btnIssueBooks.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnReturnBooks
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(640, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 34);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Return Books";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnReturnBooks.FlatAppearance.BorderSize = 0;
+            this.btnReturnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReturnBooks.ForeColor = System.Drawing.Color.White;
+            this.btnReturnBooks.Location = new System.Drawing.Point(747, 55);
+            this.btnReturnBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnReturnBooks.Name = "btnReturnBooks";
+            this.btnReturnBooks.Size = new System.Drawing.Size(133, 39);
+            this.btnReturnBooks.TabIndex = 7;
+            this.btnReturnBooks.Text = "Return Books";
+            this.btnReturnBooks.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnLibrarians
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(765, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(93, 34);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Librarians";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnLibrarians.FlatAppearance.BorderSize = 0;
+            this.btnLibrarians.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLibrarians.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLibrarians.ForeColor = System.Drawing.Color.White;
+            this.btnLibrarians.Location = new System.Drawing.Point(892, 55);
+            this.btnLibrarians.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLibrarians.Name = "btnLibrarians";
+            this.btnLibrarians.Size = new System.Drawing.Size(108, 39);
+            this.btnLibrarians.TabIndex = 8;
+            this.btnLibrarians.Text = "Librarians";
+            this.btnLibrarians.UseVisualStyleBackColor = true;
+            this.btnLibrarians.Click += new System.EventHandler(this.btnLibrarians_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 46);
+            this.pictureBox2.Location = new System.Drawing.Point(27, 53);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(41, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.ClientSize = new System.Drawing.Size(884, 638);
+            this.ClientSize = new System.Drawing.Size(1031, 736);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnLibrarians);
+            this.Controls.Add(this.btnReturnBooks);
+            this.Controls.Add(this.btnIssueBooks);
             this.Controls.Add(this.btnBooks);
             this.Controls.Add(this.btnStudents);
             this.Controls.Add(this.label1);
@@ -234,6 +249,7 @@ namespace LibraryUI
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelNavbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -254,9 +270,9 @@ namespace LibraryUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnBooks;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnIssueBooks;
+        private System.Windows.Forms.Button btnReturnBooks;
+        private System.Windows.Forms.Button btnLibrarians;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;

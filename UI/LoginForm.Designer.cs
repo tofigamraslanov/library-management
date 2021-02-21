@@ -1,5 +1,5 @@
 ﻿
-namespace LibraryUI
+namespace UI
 {
     partial class LoginForm
     {
@@ -31,7 +31,6 @@ namespace LibraryUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.tbxUsername = new System.Windows.Forms.TextBox();
             this.lblUserLogin = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@ namespace LibraryUI
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.tbxPassword);
             this.panel1.Controls.Add(this.tbxUsername);
             this.panel1.Controls.Add(this.lblUserLogin);
@@ -55,29 +53,7 @@ namespace LibraryUI
             // 
             // btnLogin
             // 
-            this.btnLogin.ActiveBorderThickness = 1;
-            this.btnLogin.ActiveCornerRadius = 20;
-            this.btnLogin.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btnLogin.ActiveForecolor = System.Drawing.Color.White;
-            this.btnLogin.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
-            this.btnLogin.ButtonText = "LOGIN";
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnLogin.IdleBorderThickness = 1;
-            this.btnLogin.IdleCornerRadius = 20;
-            this.btnLogin.IdleFillColor = System.Drawing.Color.OrangeRed;
-            this.btnLogin.IdleForecolor = System.Drawing.Color.White;
-            this.btnLogin.IdleLineColor = System.Drawing.Color.OrangeRed;
-            this.btnLogin.Location = new System.Drawing.Point(51, 194);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(157, 44);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+          
             // 
             // tbxPassword
             // 
@@ -156,7 +132,6 @@ namespace LibraryUI
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.TextBox tbxUsername;
         private System.Windows.Forms.Label lblUserLogin;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

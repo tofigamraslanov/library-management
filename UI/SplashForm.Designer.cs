@@ -1,5 +1,5 @@
 ﻿
-namespace LibraryUI
+namespace UI
 {
     partial class SplashForm
     {
@@ -32,7 +32,6 @@ namespace LibraryUI
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.myProgress = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -60,18 +59,10 @@ namespace LibraryUI
             // 
             // myProgress
             // 
-            this.myProgress.Location = new System.Drawing.Point(195, 98);
-            this.myProgress.Name = "myProgress";
-            this.myProgress.ProgressColor = System.Drawing.Color.Crimson;
-            this.myProgress.ProgressColor2 = System.Drawing.Color.DeepPink;
-            this.myProgress.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.myProgress.ShadowDecoration.Parent = this.myProgress;
-            this.myProgress.Size = new System.Drawing.Size(175, 164);
-            this.myProgress.TabIndex = 2;
+            
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SplashForm
             // 
@@ -79,7 +70,6 @@ namespace LibraryUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(588, 329);
-            this.Controls.Add(this.myProgress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -96,7 +86,6 @@ namespace LibraryUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar myProgress;
         private System.Windows.Forms.Timer timer1;
     }
 }

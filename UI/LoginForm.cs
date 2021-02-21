@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryUI
+namespace UI
 {
-    public partial class BookForm : Form
+    public partial class LoginForm : Form
     {
-        public BookForm()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnBackToHomeFromBooks_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainForm mainForm = new MainForm();

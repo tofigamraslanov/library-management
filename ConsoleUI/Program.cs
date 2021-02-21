@@ -1,6 +1,6 @@
 ﻿using Business.Concrete;
-using System;
 using DataAccess.Concrete.EntityFramework;
+using System;
 
 namespace ConsoleUI
 {
@@ -8,13 +8,12 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            BookManager bookManager = new BookManager(new EfBookDal());
-            StudentManager studentManager = new StudentManager(new EfStudentDal());
             LibrarianManager librarianManager = new LibrarianManager(new EfLibrarianDal());
-
-            foreach (var book in librarianManager.GetAll())
+            StudentManager studentManager = new StudentManager(new EfStudentDal());
+            var result = studentManager.GetAll();
+            foreach (var item in result)
             {
-                Console.WriteLine(book.Name);
+                Console.WriteLine(item.Name);
             }
 
             Console.ReadLine();
