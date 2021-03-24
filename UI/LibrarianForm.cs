@@ -41,6 +41,14 @@ namespace UI
         private void LoadLibrarians()
         {
             dgwLibrarians.DataSource = _librarianManager.GetAll();
+            dgwLibrarians.ClearSelection();
+        }
+
+        private void ClearInputs()
+        {
+            tbxName.Clear();
+            tbxPassword.Clear();
+            tbxPhone.Clear();
         }
 
         private void btnAddLibrarian_Click(object sender, EventArgs e)
@@ -57,6 +65,7 @@ namespace UI
                     Phone = tbxPhone.Text,
                     Password = tbxPassword.Text
                 });
+                ClearInputs();
                 LoadLibrarians();
                 MessageBox.Show("Librarian added Successfully");
             }
@@ -71,25 +80,37 @@ namespace UI
 
         private void btnUpdateLibrarian_Click(object sender, EventArgs e)
         {
-            _librarianManager.Update(new Librarian
+            if (tbxName.Text == "" || tbxPassword.Text == "" || tbxPhone.Text == "")
+                MessageBox.Show("Please select row which you want to update then update them");
+            else
             {
-                Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value),
-                Name = tbxName.Text,
-                Password = tbxPassword.Text,
-                Phone = tbxPhone.Text
-            });
-            LoadLibrarians();
-            MessageBox.Show("Updated Successfully");
+                _librarianManager.Update(new Librarian
+                {
+                    Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value),
+                    Name = tbxName.Text,
+                    Password = tbxPassword.Text,
+                    Phone = tbxPhone.Text
+                });
+                ClearInputs();
+                LoadLibrarians();
+                MessageBox.Show("Updated Successfully");
+            }
         }
 
         private void btnDeleteLibrarian_Click(object sender, EventArgs e)
         {
-            _librarianManager.Delete(new Librarian
+            if (tbxName.Text == "" || tbxPassword.Text == "" || tbxPhone.Text == "")
+                MessageBox.Show("Please select row which you want to delete then delete it");
+            else
             {
-                Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value)
-            });
-            LoadLibrarians();
-            MessageBox.Show("Deleted Successfully");
+                _librarianManager.Delete(new Librarian
+                {
+                    Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value)
+                });
+                ClearInputs();
+                LoadLibrarians();
+                MessageBox.Show("Deleted Successfully");
+            }
         }
     }
 }

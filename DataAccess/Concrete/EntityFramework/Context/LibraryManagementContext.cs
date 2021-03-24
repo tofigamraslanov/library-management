@@ -13,5 +13,6 @@ namespace DataAccess.Concrete.EntityFramework.Context
         public DbSet<Book> Books { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Librarian> Librarians { get; set; }
+        public DbSet<IssueBook> IssueBooks { get; set; }
     }
 }

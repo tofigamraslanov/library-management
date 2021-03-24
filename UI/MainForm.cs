@@ -29,32 +29,32 @@ namespace UI
             studentForm.Show();
         }
 
-        //private void btnBooks_Click(object sender, EventArgs e)
-        //{
-        //    this.Hide();
-        //    BookForm bookForm = new BookForm();
-        //    bookForm.Show();
-        //}
-
-        //private void btnIssueBooks_Click(object sender, EventArgs e)
-        //{
-        //    this.Hide();
-        //    IssueBookForm issueBookForm = new IssueBookForm();
-        //    issueBookForm.Show();
-        //}
-
-        private void btnLibrarians_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LibrarianForm librarianForm = new LibrarianForm();
-            librarianForm.Show();
-        }
-
         private void btnBooks_Click(object sender, EventArgs e)
         {
             this.Hide();
             BookForm bookForm = new BookForm();
             bookForm.Show();
+        }
+
+        private void btnIssueBooks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IssueBookForm issueBookForm = new IssueBookForm();
+            issueBookForm.Show();
+        }
+
+        private void btnReturnBooks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReturnBookForm returnBookForm = new ReturnBookForm();
+            returnBookForm.Show();
+        }
+        
+        private void btnLibrarians_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LibrarianForm librarianForm = new LibrarianForm();
+            librarianForm.Show();
         }
     }
 }

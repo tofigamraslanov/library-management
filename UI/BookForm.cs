@@ -38,7 +38,8 @@ namespace UI
 
         private void LoadBooks()
         {
-            dgwBooks.DataSource = _bookManager.GetAll();
+            dgwBooks.DataSource = _bookManager.GetAll(); 
+            dgwBooks.ClearSelection();
         }
 
         public void ClearInputs()
@@ -51,17 +52,22 @@ namespace UI
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-            _bookManager.Add(new Book
+            if (tbxName.Text == "" || tbxAuthor.Text == "" || dtpPublishDate.Value == null || tbxPrice.Text == "" || tbxQuantity.Text == "")
+                MessageBox.Show("Please fill out inputs");
+            else
             {
-                Name = tbxName.Text,
-                Author = tbxAuthor.Text,
-                PublishDate = dtpPublishDate.Value,
-                Price = Convert.ToDecimal(tbxPrice.Text),
-                Quantity = Convert.ToInt32(tbxQuantity.Text)
-            });
-            ClearInputs();
-            LoadBooks();
-            MessageBox.Show("Added Successfully");
+                _bookManager.Add(new Book
+                {
+                    Name = tbxName.Text,
+                    Author = tbxAuthor.Text,
+                    PublishDate = dtpPublishDate.Value,
+                    Price = Convert.ToDecimal(tbxPrice.Text),
+                    Quantity = Convert.ToInt32(tbxQuantity.Text)
+                });
+                ClearInputs();
+                LoadBooks();
+                MessageBox.Show("Added Successfully");
+            }
         }
 
         private void dgwBooks_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -75,29 +81,39 @@ namespace UI
 
         private void btnUpdateBook_Click(object sender, EventArgs e)
         {
-            _bookManager.Update(new Book
+            if (tbxName.Text == "" || tbxAuthor.Text == "" || dtpPublishDate.Value == null || tbxPrice.Text == "" || tbxQuantity.Text == "")
+                MessageBox.Show("Please select row which you want to update then update them");
+            else
             {
-                Id = Convert.ToInt32(dgwBooks.CurrentRow.Cells[0].Value),
-                Name = tbxName.Text,
-                Author = tbxAuthor.Text,
-                PublishDate = dtpPublishDate.Value,
-                Price = Convert.ToDecimal(tbxPrice.Text),
-                Quantity = Convert.ToInt32(tbxQuantity.Text)
-            });
-            ClearInputs();
-            LoadBooks();
-            MessageBox.Show("Updated Successfully");
+                _bookManager.Update(new Book
+                {
+                    Id = Convert.ToInt32(dgwBooks.CurrentRow.Cells[0].Value),
+                    Name = tbxName.Text,
+                    Author = tbxAuthor.Text,
+                    PublishDate = dtpPublishDate.Value,
+                    Price = Convert.ToDecimal(tbxPrice.Text),
+                    Quantity = Convert.ToInt32(tbxQuantity.Text)
+                });
+                ClearInputs();
+                LoadBooks();
+                MessageBox.Show("Updated Successfully");
+            }
         }
 
         private void btnDeleteBook_Click(object sender, EventArgs e)
         {
-            _bookManager.Delete(new Book
+            if (tbxName.Text == "" || tbxAuthor.Text == "" || dtpPublishDate.Value == null || tbxPrice.Text == "" || tbxQuantity.Text == "")
+                MessageBox.Show("Please select row which you want to delete then delete it");
+            else
             {
-                Id = Convert.ToInt32(dgwBooks.CurrentRow.Cells[0].Value),
-            });
-            ClearInputs();
-            LoadBooks();
-            MessageBox.Show("Deleted Successfully");
+                _bookManager.Delete(new Book
+                {
+                    Id = Convert.ToInt32(dgwBooks.CurrentRow.Cells[0].Value),
+                });
+                ClearInputs();
+                LoadBooks();
+                MessageBox.Show("Deleted Successfully");
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -37,6 +39,11 @@ namespace Business.Concrete
         public void Delete(Book book)
         {
             _bookDal.Delete(book);
+        }
+
+        public List<Book> GetByQuantity(Expression<Func<Book, bool>> filter)
+        {
+            return _bookDal.GetAll(filter);
         }
     }
 }

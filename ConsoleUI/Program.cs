@@ -9,13 +9,12 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             LibrarianManager librarianManager = new LibrarianManager(new EfLibrarianDal());
-            StudentManager studentManager = new StudentManager(new EfStudentDal());
-            var result = studentManager.GetAll();
+            StudentManager _studentManager = new StudentManager(new EfStudentDal());
+            var result = _studentManager.GetAll().FindAll(p => p.Id != 0);
             foreach (var item in result)
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine(item.Id);
             }
-
             Console.ReadLine();
         }
     }

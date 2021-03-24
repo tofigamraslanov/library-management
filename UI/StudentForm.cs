@@ -39,6 +39,15 @@ namespace UI
         private void LoadStudents()
         {
             dgwStudents.DataSource = _studentManager.GetAll();
+            dgwStudents.ClearSelection();
+        }
+
+        private void ClearInputs()
+        {
+            tbxName.Clear();
+            tbxDepartment.Clear();
+            tbxCourse.Clear();
+            tbxPhone.Clear();
         }
 
         private void btnAddLibrarian_Click(object sender, EventArgs e)
@@ -56,6 +65,8 @@ namespace UI
                     Course = int.Parse(tbxCourse.Text),
                     Phone = tbxPhone.Text
                 });
+                ClearInputs();
+                LoadStudents();
                 MessageBox.Show("Student added succesfuly");
             }
         }
@@ -70,26 +81,38 @@ namespace UI
 
         private void btnUpdateLibrarian_Click(object sender, EventArgs e)
         {
-            _studentManager.Update(new Student
+            if (tbxName.Text == "" || tbxDepartment.Text == "" || tbxCourse.Text == "" || tbxPhone.Text == "")
+                MessageBox.Show("Please select row which you want to update then update them");
+            else
             {
-                Id = Convert.ToInt32(dgwStudents.CurrentRow.Cells[0].Value),
-                Name = tbxName.Text,
-                Department = tbxDepartment.Text,
-                Course = Convert.ToInt32(tbxCourse.Text),
-                Phone = tbxPhone.Text
-            });
-            LoadStudents();
-            MessageBox.Show("Updated Successfully");
+                _studentManager.Update(new Student
+                {
+                    Id = Convert.ToInt32(dgwStudents.CurrentRow.Cells[0].Value),
+                    Name = tbxName.Text,
+                    Department = tbxDepartment.Text,
+                    Course = Convert.ToInt32(tbxCourse.Text),
+                    Phone = tbxPhone.Text
+                });
+                ClearInputs();
+                LoadStudents();
+                MessageBox.Show("Updated Successfully");
+            }
         }
 
         private void btnDeleteLibrarian_Click(object sender, EventArgs e)
         {
-            _studentManager.Delete(new Student
+            if (tbxName.Text == "" || tbxDepartment.Text == "" || tbxCourse.Text == "" || tbxPhone.Text == "")
+                MessageBox.Show("Please select row which you want to delete then delete it");
+            else
             {
-                Id = Convert.ToInt32(dgwStudents.CurrentRow.Cells[0].Value)
-            });
-            LoadStudents();
-            MessageBox.Show("Deleted Successfully");
+                _studentManager.Delete(new Student
+                {
+                    Id = Convert.ToInt32(dgwStudents.CurrentRow.Cells[0].Value)
+                });
+                ClearInputs();
+                LoadStudents();
+                MessageBox.Show("Deleted Successfully");
+            }
         }
     }
 }

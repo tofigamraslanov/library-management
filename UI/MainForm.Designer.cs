@@ -80,7 +80,7 @@ namespace UI
             this.panelFooter.Controls.Add(this.button7);
             this.panelFooter.Controls.Add(this.button6);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFooter.Location = new System.Drawing.Point(0, 671);
+            this.panelFooter.Location = new System.Drawing.Point(0, 723);
             this.panelFooter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1031, 65);
@@ -130,10 +130,10 @@ namespace UI
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMain.Location = new System.Drawing.Point(0, 101);
+            this.panelMain.Location = new System.Drawing.Point(0, 102);
             this.panelMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1031, 570);
+            this.panelMain.Size = new System.Drawing.Size(1031, 621);
             this.panelMain.TabIndex = 2;
             // 
             // label1
@@ -191,6 +191,7 @@ namespace UI
             this.btnIssueBooks.TabIndex = 6;
             this.btnIssueBooks.Text = "Issue Books";
             this.btnIssueBooks.UseVisualStyleBackColor = true;
+            this.btnIssueBooks.Click += new System.EventHandler(this.btnIssueBooks_Click);
             // 
             // btnReturnBooks
             // 
@@ -205,6 +206,7 @@ namespace UI
             this.btnReturnBooks.TabIndex = 7;
             this.btnReturnBooks.Text = "Return Books";
             this.btnReturnBooks.UseVisualStyleBackColor = true;
+            this.btnReturnBooks.Click += new System.EventHandler(this.btnReturnBooks_Click);
             // 
             // btnLibrarians
             // 
@@ -237,7 +239,7 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.ClientSize = new System.Drawing.Size(1031, 736);
+            this.ClientSize = new System.Drawing.Size(1031, 788);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnLibrarians);
             this.Controls.Add(this.btnReturnBooks);
