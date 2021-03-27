@@ -36,6 +36,7 @@ namespace UI
         private void LibrarianForm_Load(object sender, EventArgs e)
         {
             LoadLibrarians();
+            cbFilterLibrarians.Text = "Select column which you want to search by";
         }
 
         private void LoadLibrarians()
@@ -110,6 +111,16 @@ namespace UI
                 ClearInputs();
                 LoadLibrarians();
                 MessageBox.Show("Deleted Successfully");
+            }
+        }
+
+        private void tbxSearchLibrarians_TextChanged(object sender, EventArgs e)
+        {
+            if (cbFilterLibrarians.Text == "Search by Name")
+            {
+                dgwLibrarians.DataSource = _librarianManager.GetAll()
+                    .Where(x => x.Name.StartsWith(tbxSearchLibrarians.Text)).ToList();
+                dgwLibrarians.ClearSelection();
             }
         }
     }

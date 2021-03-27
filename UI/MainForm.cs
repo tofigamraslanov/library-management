@@ -42,13 +42,6 @@ namespace UI
             IssueBookForm issueBookForm = new IssueBookForm();
             issueBookForm.Show();
         }
-
-        private void btnReturnBooks_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ReturnBookForm returnBookForm = new ReturnBookForm();
-            returnBookForm.Show();
-        }
         
         private void btnLibrarians_Click(object sender, EventArgs e)
         {

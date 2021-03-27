@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -34,6 +35,7 @@ namespace UI
         private void StudentForm_Load(object sender, EventArgs e)
         {
             LoadStudents();
+            cbFilterStudents.Text = "Select column which you want to search by";
         }
 
         private void LoadStudents()
@@ -112,6 +114,28 @@ namespace UI
                 ClearInputs();
                 LoadStudents();
                 MessageBox.Show("Deleted Successfully");
+            }
+        }
+
+        private void tbxSearchStudents_TextChanged(object sender, EventArgs e)
+        {
+            if (cbFilterStudents.Text == "Search by Name")
+            {
+                dgwStudents.DataSource = _studentManager.GetAll()
+                    .Where(x => x.Name.StartsWith(tbxSearchStudents.Text)).ToList();
+                dgwStudents.ClearSelection();
+            }
+            else if (cbFilterStudents.Text == "Search by Department")
+            {
+                dgwStudents.DataSource = _studentManager.GetAll()
+                    .Where(x => x.Department.StartsWith(tbxSearchStudents.Text)).ToList();
+                dgwStudents.ClearSelection();
+            }
+            else if (cbFilterStudents.Text == "Search by Course")
+            {
+                dgwStudents.DataSource = _studentManager.GetAll()
+                    .Where(x => x.Course.ToString() == tbxSearchStudents.Text).ToList();
+                dgwStudents.ClearSelection();
             }
         }
     }

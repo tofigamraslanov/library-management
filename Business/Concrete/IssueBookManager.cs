@@ -13,6 +13,7 @@ namespace Business.Concrete
     {
         IIssueBookDal _issueBookDal;
         private IBookService _bookService;
+
         public IssueBookManager(IIssueBookDal issueBookDal, IBookService bookService)
         {
             _issueBookDal = issueBookDal;
@@ -35,16 +36,14 @@ namespace Business.Concrete
         public void Delete(IssueBook issueBook)
         {
             _issueBookDal.Delete(issueBook);
-            //var books = _bookService.GetAll();
-            //if (books.Count > 0)
-            //{
-            //    var book = books.SingleOrDefault(i => i.Id == issueBook.BookId);
-            //    if (book.Quantity > 0)
-            //    {
-            //        book.Quantity++;
-            //        _bookService.Update(book);
-            //    }
-            //}
+            var books = _bookService.GetAll();
+            if (books.Count > 0)
+            {
+                var book = books.SingleOrDefault(i => i.Id == issueBook.BookId);
+                book.Quantity++;
+                _bookService.Update(book);
+
+            }
         }
 
         public List<IssueBook> GetAll()

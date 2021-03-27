@@ -24,10 +24,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  on ib.StudentId equals s.Id
                              select new IssueBookDetailsDto()
                              {
+                                 IssueBookId = ib.Id,
                                  StudentName = s.Name,
-                                 StudentDepartment = s.Department,
-                                 StudentCourse = s.Course,
-                                 StudentPhone = s.Phone,
                                  BookName = b.Name,
                                  IssueDate = ib.IssueDate
                              };

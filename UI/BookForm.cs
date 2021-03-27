@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -34,11 +35,12 @@ namespace UI
         private void BookForm_Load(object sender, EventArgs e)
         {
             LoadBooks();
+            cbFilterBooks.Text = "Select column which you want to search by";
         }
 
         private void LoadBooks()
         {
-            dgwBooks.DataSource = _bookManager.GetAll(); 
+            dgwBooks.DataSource = _bookManager.GetAll();
             dgwBooks.ClearSelection();
         }
 
@@ -113,6 +115,22 @@ namespace UI
                 ClearInputs();
                 LoadBooks();
                 MessageBox.Show("Deleted Successfully");
+            }
+        }
+
+        private void tbxSearchBooks_TextChanged(object sender, EventArgs e)
+        {
+            if (cbFilterBooks.Text == "Search by Name")
+            {
+                dgwBooks.DataSource = _bookManager.GetAll()
+                    .Where(x => x.Name.StartsWith(tbxSearchBooks.Text)).ToList();
+                dgwBooks.ClearSelection();
+            }
+            else if (cbFilterBooks.Text == "Search by Author")
+            {
+                dgwBooks.DataSource = _bookManager.GetAll()
+                    .Where(x => x.Author.StartsWith(tbxSearchBooks.Text)).ToList();
+                dgwBooks.ClearSelection();
             }
         }
     }

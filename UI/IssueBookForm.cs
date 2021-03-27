@@ -2,19 +2,17 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace UI
 {
     public partial class IssueBookForm : Form
     {
-        IssueBookManager _issueBookManager = new IssueBookManager(new EfIssueBookDal(), new BookManager(new EfBookDal()));
+        IssueBookManager _issueBookManager =
+            new IssueBookManager(new EfIssueBookDal(), new BookManager(new EfBookDal()));
+
         BookManager _bookManager = new BookManager(new EfBookDal());
         StudentManager _studentManager = new StudentManager(new EfStudentDal());
 
@@ -40,20 +38,21 @@ namespace UI
             LoadIssueBooks();
             FillStudents();
             FillBooks();
+            cbFilterIssueBooks.Text = "Select column which you want to search by";
         }
 
         private void LoadIssueBooks()
         {
-            dgwIssueBooks.DataSource = _issueBookManager.GetAll();
+            dgwIssueBooks.DataSource = _issueBookManager.GetIssueBookDetails();
             dgwIssueBooks.ClearSelection();
         }
 
         private void FillStudents()
         {
-            var ids = _studentManager.GetAll();
-            foreach (var id in ids)
+            var students = _studentManager.GetAll();
+            foreach (var student in students)
             {
-                cbStudentId.Items.Add(id.Id);
+                cbStudentNameIB.Items.Add(student.Name);
             }
         }
 
@@ -62,56 +61,60 @@ namespace UI
             var books = _bookManager.GetAll().Where(b => b.Quantity > 0);
             foreach (var book in books)
             {
-                cbBookId.Items.Add(book.Id);
+                cbBookNameIB.Items.Add(book.Name);
             }
         }
 
         private void ClearInputs()
         {
-            cbStudentId.Text = "";
-            cbBookId.Text = "";
+            cbStudentNameIB.Text = "";
+            cbBookNameIB.Text = "";
         }
 
         private void btnAddIssueBook_Click(object sender, EventArgs e)
         {
-            if (cbStudentId.Text == "" || cbBookId.Text == "" || dtpIssueDate.Value == null)
+            if (cbStudentNameIB.Text == "" || cbBookNameIB.Text == "" || dtpIssueDate.Value == null)
             {
                 MessageBox.Show("Please fill out fields");
             }
             else
             {
+                var studentId = _studentManager.GetAll().Where(c => c.Name == cbStudentNameIB.Text).FirstOrDefault().Id;
+                var bookId = _bookManager.GetAll().Where(c => c.Name == cbBookNameIB.Text).FirstOrDefault().Id;
                 _issueBookManager.Add(new IssueBook
                 {
-                    StudentId = Convert.ToInt32(cbStudentId.Text),
-                    BookId = Convert.ToInt32(cbBookId.Text),
+                    StudentId = studentId,
+                    BookId = bookId,
                     IssueDate = dtpIssueDate.Value
                 });
 
                 LoadIssueBooks();
                 ClearInputs();
                 FillBooks();
-                MessageBox.Show("Added Successfully");
+                MessageBox.Show("Book Successfully Issued");
             }
         }
 
         private void dgwIssueBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbStudentId.Text = dgwIssueBooks.CurrentRow.Cells[1].Value.ToString();
-            cbBookId.Text = dgwIssueBooks.CurrentRow.Cells[2].Value.ToString();
+            cbStudentNameIB.Text = dgwIssueBooks.CurrentRow.Cells[1].Value.ToString();
+            cbBookNameIB.Text = dgwIssueBooks.CurrentRow.Cells[2].Value.ToString();
             dtpIssueDate.Value = Convert.ToDateTime(dgwIssueBooks.CurrentRow.Cells[3].Value);
         }
 
         private void btnUpdateIssueBook_Click(object sender, EventArgs e)
         {
-            if (cbStudentId.Text == "" || cbBookId.Text == "" || dtpIssueDate.Value == null)
+            if (cbStudentNameIB.Text == "" || cbBookNameIB.Text == "" || dtpIssueDate.Value == null)
                 MessageBox.Show("Please select row which you want to update then update them");
             else
             {
+                var studentId = _studentManager.GetAll().Where(c => c.Name == cbStudentNameIB.Text).FirstOrDefault().Id;
+                var bookId = _bookManager.GetAll().Where(c => c.Name == cbBookNameIB.Text).FirstOrDefault().Id;
                 _issueBookManager.Update(new IssueBook
                 {
                     Id = Convert.ToInt32(dgwIssueBooks.CurrentRow.Cells[0].Value),
-                    StudentId = Convert.ToInt32(cbStudentId.Text),
-                    BookId = Convert.ToInt32(cbBookId.Text),
+                    StudentId = studentId,
+                    BookId = bookId,
                     IssueDate = Convert.ToDateTime(dtpIssueDate.Value)
                 });
                 ClearInputs();
@@ -122,19 +125,38 @@ namespace UI
 
         private void btnDeleteIssueBook_Click(object sender, EventArgs e)
         {
-            if (cbStudentId.Text == "" || cbBookId.Text == "" || dtpIssueDate.Value == null)
+            if (cbStudentNameIB.Text == "" || cbBookNameIB.Text == "" || dtpIssueDate.Value == null)
                 MessageBox.Show("Please select row which you want to delete then delete it");
             else
             {
+                var studentId = _studentManager.GetAll().Where(c => c.Name == cbStudentNameIB.Text).FirstOrDefault().Id;
+                var bookId = _bookManager.GetAll().Where(c => c.Name == cbBookNameIB.Text).FirstOrDefault().Id;
                 _issueBookManager.Delete(new IssueBook
                 {
                     Id = Convert.ToInt32(dgwIssueBooks.CurrentRow.Cells[0].Value),
-                    BookId = Convert.ToInt32(dgwIssueBooks.CurrentRow.Cells[2].Value)
+                    BookId = bookId,
+                    StudentId = studentId
                 });
                 ClearInputs();
                 LoadIssueBooks();
                 FillBooks();
-                MessageBox.Show("Deleted Successfully");
+                MessageBox.Show("Book Successfully Returned");
+            }
+        }
+      
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (cbFilterIssueBooks.Text == "Search by Student Name")
+            {
+                dgwIssueBooks.DataSource = _issueBookManager.GetIssueBookDetails()
+                    .Where(x => x.StudentName.StartsWith(tbxSearchIssueBooks.Text)).ToList();
+                dgwIssueBooks.ClearSelection();
+            }
+            else if (cbFilterIssueBooks.Text == "Search by Book Name")
+            {
+                dgwIssueBooks.DataSource = _issueBookManager.GetIssueBookDetails()
+                    .Where(x => x.BookName.StartsWith(tbxSearchIssueBooks.Text)).ToList();
+                dgwIssueBooks.ClearSelection();
             }
         }
     }
