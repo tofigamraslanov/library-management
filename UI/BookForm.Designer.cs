@@ -30,8 +30,8 @@ namespace UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -109,14 +109,14 @@ namespace UI
             // 
             // tbxAuthor
             // 
-            this.tbxAuthor.Location = new System.Drawing.Point(177, 237);
+            this.tbxAuthor.Location = new System.Drawing.Point(180, 280);
             this.tbxAuthor.Name = "tbxAuthor";
             this.tbxAuthor.Size = new System.Drawing.Size(197, 23);
             this.tbxAuthor.TabIndex = 64;
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(177, 189);
+            this.tbxName.Location = new System.Drawing.Point(180, 240);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(197, 23);
             this.tbxName.TabIndex = 63;
@@ -125,24 +125,24 @@ namespace UI
             // 
             this.dgwBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwBooks.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwBooks.ColumnHeadersHeight = 30;
             this.dgwBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwBooks.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwBooks.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgwBooks.EnableHeadersVisualStyles = false;
             this.dgwBooks.Location = new System.Drawing.Point(510, 180);
             this.dgwBooks.Name = "dgwBooks";
@@ -158,7 +158,7 @@ namespace UI
             this.btnBackToHomeFromBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToHomeFromBooks.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBackToHomeFromBooks.ForeColor = System.Drawing.Color.White;
-            this.btnBackToHomeFromBooks.Location = new System.Drawing.Point(98, 485);
+            this.btnBackToHomeFromBooks.Location = new System.Drawing.Point(91, 515);
             this.btnBackToHomeFromBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBackToHomeFromBooks.Name = "btnBackToHomeFromBooks";
             this.btnBackToHomeFromBooks.Size = new System.Drawing.Size(200, 42);
@@ -174,7 +174,7 @@ namespace UI
             this.btnUpdateLBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateLBook.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateLBook.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateLBook.Location = new System.Drawing.Point(142, 426);
+            this.btnUpdateLBook.Location = new System.Drawing.Point(141, 452);
             this.btnUpdateLBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdateLBook.Name = "btnUpdateLBook";
             this.btnUpdateLBook.Size = new System.Drawing.Size(108, 42);
@@ -190,7 +190,7 @@ namespace UI
             this.btnDeleteBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteBook.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeleteBook.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBook.Location = new System.Drawing.Point(272, 426);
+            this.btnDeleteBook.Location = new System.Drawing.Point(275, 452);
             this.btnDeleteBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDeleteBook.Name = "btnDeleteBook";
             this.btnDeleteBook.Size = new System.Drawing.Size(102, 42);
@@ -206,7 +206,7 @@ namespace UI
             this.btnAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBook.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBook.ForeColor = System.Drawing.Color.White;
-            this.btnAddBook.Location = new System.Drawing.Point(32, 426);
+            this.btnAddBook.Location = new System.Drawing.Point(25, 452);
             this.btnAddBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(88, 42);
@@ -220,7 +220,7 @@ namespace UI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(32, 282);
+            this.label5.Location = new System.Drawing.Point(25, 320);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 22);
@@ -232,7 +232,7 @@ namespace UI
             this.lblStudentName.AutoSize = true;
             this.lblStudentName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblStudentName.ForeColor = System.Drawing.Color.Black;
-            this.lblStudentName.Location = new System.Drawing.Point(30, 234);
+            this.lblStudentName.Location = new System.Drawing.Point(25, 280);
             this.lblStudentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStudentName.Name = "lblStudentName";
             this.lblStudentName.Size = new System.Drawing.Size(74, 22);
@@ -244,7 +244,7 @@ namespace UI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(30, 186);
+            this.label3.Location = new System.Drawing.Point(25, 240);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 22);
@@ -253,14 +253,14 @@ namespace UI
             // 
             // tbxQuantity
             // 
-            this.tbxQuantity.Location = new System.Drawing.Point(177, 375);
+            this.tbxQuantity.Location = new System.Drawing.Point(180, 400);
             this.tbxQuantity.Name = "tbxQuantity";
             this.tbxQuantity.Size = new System.Drawing.Size(197, 23);
             this.tbxQuantity.TabIndex = 69;
             // 
             // tbxPrice
             // 
-            this.tbxPrice.Location = new System.Drawing.Point(177, 332);
+            this.tbxPrice.Location = new System.Drawing.Point(180, 360);
             this.tbxPrice.Name = "tbxPrice";
             this.tbxPrice.Size = new System.Drawing.Size(197, 23);
             this.tbxPrice.TabIndex = 68;
@@ -270,7 +270,7 @@ namespace UI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(32, 329);
+            this.label4.Location = new System.Drawing.Point(25, 360);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 22);
@@ -282,7 +282,7 @@ namespace UI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(32, 372);
+            this.label6.Location = new System.Drawing.Point(25, 400);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 22);
@@ -291,7 +291,7 @@ namespace UI
             // 
             // dtpPublishDate
             // 
-            this.dtpPublishDate.Location = new System.Drawing.Point(177, 282);
+            this.dtpPublishDate.Location = new System.Drawing.Point(180, 320);
             this.dtpPublishDate.Name = "dtpPublishDate";
             this.dtpPublishDate.Size = new System.Drawing.Size(197, 23);
             this.dtpPublishDate.TabIndex = 70;

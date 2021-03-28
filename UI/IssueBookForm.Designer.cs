@@ -30,8 +30,8 @@ namespace UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssueBookForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@ namespace UI
             // 
             // dtpIssueDate
             // 
-            this.dtpIssueDate.Location = new System.Drawing.Point(221, 347);
+            this.dtpIssueDate.Location = new System.Drawing.Point(210, 330);
             this.dtpIssueDate.Name = "dtpIssueDate";
             this.dtpIssueDate.Size = new System.Drawing.Size(208, 23);
             this.dtpIssueDate.TabIndex = 85;
@@ -117,24 +117,24 @@ namespace UI
             // 
             this.dgwIssueBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwIssueBooks.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwIssueBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwIssueBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwIssueBooks.ColumnHeadersHeight = 30;
             this.dgwIssueBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwIssueBooks.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwIssueBooks.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgwIssueBooks.EnableHeadersVisualStyles = false;
             this.dgwIssueBooks.Location = new System.Drawing.Point(510, 180);
             this.dgwIssueBooks.Name = "dgwIssueBooks";
@@ -148,7 +148,7 @@ namespace UI
             this.lblBookId.AutoSize = true;
             this.lblBookId.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblBookId.ForeColor = System.Drawing.Color.Black;
-            this.lblBookId.Location = new System.Drawing.Point(34, 294);
+            this.lblBookId.Location = new System.Drawing.Point(25, 290);
             this.lblBookId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookId.Name = "lblBookId";
             this.lblBookId.Size = new System.Drawing.Size(116, 22);
@@ -162,7 +162,7 @@ namespace UI
             this.btnBackToHomeFromIssueBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToHomeFromIssueBooks.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBackToHomeFromIssueBooks.ForeColor = System.Drawing.Color.White;
-            this.btnBackToHomeFromIssueBooks.Location = new System.Drawing.Point(130, 467);
+            this.btnBackToHomeFromIssueBooks.Location = new System.Drawing.Point(116, 444);
             this.btnBackToHomeFromIssueBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBackToHomeFromIssueBooks.Name = "btnBackToHomeFromIssueBooks";
             this.btnBackToHomeFromIssueBooks.Size = new System.Drawing.Size(200, 42);
@@ -176,7 +176,7 @@ namespace UI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(34, 343);
+            this.label5.Location = new System.Drawing.Point(25, 330);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 22);
@@ -190,7 +190,7 @@ namespace UI
             this.btnUpdateIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateIssueBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateIssueBook.Location = new System.Drawing.Point(170, 410);
+            this.btnUpdateIssueBook.Location = new System.Drawing.Point(161, 387);
             this.btnUpdateIssueBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdateIssueBook.Name = "btnUpdateIssueBook";
             this.btnUpdateIssueBook.Size = new System.Drawing.Size(110, 42);
@@ -206,7 +206,7 @@ namespace UI
             this.btnAddIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddIssueBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnAddIssueBook.Location = new System.Drawing.Point(34, 410);
+            this.btnAddIssueBook.Location = new System.Drawing.Point(25, 387);
             this.btnAddIssueBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddIssueBook.Name = "btnAddIssueBook";
             this.btnAddIssueBook.Size = new System.Drawing.Size(116, 42);
@@ -222,7 +222,7 @@ namespace UI
             this.btnDeleteIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteIssueBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeleteIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteIssueBook.Location = new System.Drawing.Point(303, 410);
+            this.btnDeleteIssueBook.Location = new System.Drawing.Point(293, 387);
             this.btnDeleteIssueBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDeleteIssueBook.Name = "btnDeleteIssueBook";
             this.btnDeleteIssueBook.Size = new System.Drawing.Size(124, 42);
@@ -236,7 +236,7 @@ namespace UI
             this.cbBookNameIB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbBookNameIB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbBookNameIB.FormattingEnabled = true;
-            this.cbBookNameIB.Location = new System.Drawing.Point(221, 298);
+            this.cbBookNameIB.Location = new System.Drawing.Point(210, 290);
             this.cbBookNameIB.Name = "cbBookNameIB";
             this.cbBookNameIB.Size = new System.Drawing.Size(206, 23);
             this.cbBookNameIB.TabIndex = 87;
@@ -246,7 +246,7 @@ namespace UI
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(34, 247);
+            this.label7.Location = new System.Drawing.Point(25, 250);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(143, 22);
@@ -258,7 +258,7 @@ namespace UI
             this.cbStudentNameIB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbStudentNameIB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbStudentNameIB.FormattingEnabled = true;
-            this.cbStudentNameIB.Location = new System.Drawing.Point(221, 250);
+            this.cbStudentNameIB.Location = new System.Drawing.Point(210, 250);
             this.cbStudentNameIB.Name = "cbStudentNameIB";
             this.cbStudentNameIB.Size = new System.Drawing.Size(206, 23);
             this.cbStudentNameIB.TabIndex = 90;

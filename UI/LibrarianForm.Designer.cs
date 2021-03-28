@@ -30,8 +30,8 @@ namespace UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrarianForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@ namespace UI
             this.btnUpdateLibrarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateLibrarian.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateLibrarian.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateLibrarian.Location = new System.Drawing.Point(154, 404);
+            this.btnUpdateLibrarian.Location = new System.Drawing.Point(147, 404);
             this.btnUpdateLibrarian.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdateLibrarian.Name = "btnUpdateLibrarian";
             this.btnUpdateLibrarian.Size = new System.Drawing.Size(108, 42);
@@ -158,7 +158,7 @@ namespace UI
             this.btnAddLibrarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLibrarian.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddLibrarian.ForeColor = System.Drawing.Color.White;
-            this.btnAddLibrarian.Location = new System.Drawing.Point(44, 404);
+            this.btnAddLibrarian.Location = new System.Drawing.Point(25, 404);
             this.btnAddLibrarian.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddLibrarian.Name = "btnAddLibrarian";
             this.btnAddLibrarian.Size = new System.Drawing.Size(88, 42);
@@ -172,7 +172,7 @@ namespace UI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(42, 333);
+            this.label5.Location = new System.Drawing.Point(25, 330);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 22);
@@ -184,7 +184,7 @@ namespace UI
             this.lblStudentName.AutoSize = true;
             this.lblStudentName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblStudentName.ForeColor = System.Drawing.Color.Black;
-            this.lblStudentName.Location = new System.Drawing.Point(42, 285);
+            this.lblStudentName.Location = new System.Drawing.Point(25, 290);
             this.lblStudentName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStudentName.Name = "lblStudentName";
             this.lblStudentName.Size = new System.Drawing.Size(95, 22);
@@ -196,7 +196,7 @@ namespace UI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(42, 233);
+            this.label3.Location = new System.Drawing.Point(25, 250);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 22);
@@ -207,24 +207,24 @@ namespace UI
             // 
             this.dgwLibrarians.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwLibrarians.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwLibrarians.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwLibrarians.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgwLibrarians.ColumnHeadersHeight = 30;
             this.dgwLibrarians.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwLibrarians.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwLibrarians.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgwLibrarians.EnableHeadersVisualStyles = false;
             this.dgwLibrarians.Location = new System.Drawing.Point(510, 180);
             this.dgwLibrarians.Name = "dgwLibrarians";
@@ -235,21 +235,21 @@ namespace UI
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(189, 236);
+            this.tbxName.Location = new System.Drawing.Point(189, 250);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(197, 23);
             this.tbxName.TabIndex = 52;
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(189, 288);
+            this.tbxPassword.Location = new System.Drawing.Point(189, 290);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(197, 23);
             this.tbxPassword.TabIndex = 53;
             // 
             // tbxPhone
             // 
-            this.tbxPhone.Location = new System.Drawing.Point(189, 336);
+            this.tbxPhone.Location = new System.Drawing.Point(189, 330);
             this.tbxPhone.Name = "tbxPhone";
             this.tbxPhone.Size = new System.Drawing.Size(197, 23);
             this.tbxPhone.TabIndex = 54;
