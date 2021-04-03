@@ -2,13 +2,7 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -36,7 +30,7 @@ namespace UI
         private void LibrarianForm_Load(object sender, EventArgs e)
         {
             LoadLibrarians();
-            cbFilterLibrarians.Text = "Select column which you want to search by";
+            cbFilterLibrarians.Text = @"Select column which you want to search by";
         }
 
         private void LoadLibrarians()
@@ -52,11 +46,21 @@ namespace UI
             tbxPhone.Clear();
         }
 
+        private void dgwLibrarians_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgwLibrarians.CurrentRow != null)
+            {
+                tbxName.Text = dgwLibrarians.CurrentRow.Cells[1].Value.ToString();
+                tbxPassword.Text = dgwLibrarians.CurrentRow.Cells[2].Value.ToString();
+                tbxPhone.Text = dgwLibrarians.CurrentRow.Cells[3].Value.ToString();
+            }
+        }
+
         private void btnAddLibrarian_Click(object sender, EventArgs e)
         {
             if (tbxName.Text == "" || tbxPassword.Text == "" || tbxPhone.Text == "")
             {
-                MessageBox.Show("Please fill out text box");
+                MessageBox.Show(@"Please fill out inputs");
             }
             else
             {
@@ -68,59 +72,61 @@ namespace UI
                 });
                 ClearInputs();
                 LoadLibrarians();
-                MessageBox.Show("Librarian added Successfully");
+                MessageBox.Show(@"Librarian Added Successfully");
             }
-        }
-
-        private void dgwLibrarians_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tbxName.Text = dgwLibrarians.CurrentRow.Cells[1].Value.ToString();
-            tbxPassword.Text = dgwLibrarians.CurrentRow.Cells[2].Value.ToString();
-            tbxPhone.Text = dgwLibrarians.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void btnUpdateLibrarian_Click(object sender, EventArgs e)
         {
             if (tbxName.Text == "" || tbxPassword.Text == "" || tbxPhone.Text == "")
-                MessageBox.Show("Please select row which you want to update then update them");
+                MessageBox.Show(@"Please select a row which you want to update then update them");
             else
             {
-                _librarianManager.Update(new Librarian
-                {
-                    Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value),
-                    Name = tbxName.Text,
-                    Password = tbxPassword.Text,
-                    Phone = tbxPhone.Text
-                });
+                if (dgwLibrarians.CurrentRow != null)
+                    _librarianManager.Update(new Librarian
+                    {
+                        Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value),
+                        Name = tbxName.Text,
+                        Password = tbxPassword.Text,
+                        Phone = tbxPhone.Text
+                    });
                 ClearInputs();
                 LoadLibrarians();
-                MessageBox.Show("Updated Successfully");
+                MessageBox.Show(@"Librarian Updated Successfully");
             }
         }
 
         private void btnDeleteLibrarian_Click(object sender, EventArgs e)
         {
             if (tbxName.Text == "" || tbxPassword.Text == "" || tbxPhone.Text == "")
-                MessageBox.Show("Please select row which you want to delete then delete it");
+                MessageBox.Show(@"Please select a row which you want to delete then delete it");
             else
             {
                 _librarianManager.Delete(new Librarian
                 {
-                    Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value)
+                    Id = Convert.ToInt32(dgwLibrarians.CurrentRow?.Cells[0].Value)
                 });
                 ClearInputs();
                 LoadLibrarians();
-                MessageBox.Show("Deleted Successfully");
+                MessageBox.Show(@"Librarian Deleted Successfully");
             }
         }
 
         private void tbxSearchLibrarians_TextChanged(object sender, EventArgs e)
         {
-            if (cbFilterLibrarians.Text == "Search by Name")
+            string key = tbxSearchLibrarians.Text;
+            if (string.IsNullOrEmpty(key))
             {
-                dgwLibrarians.DataSource = _librarianManager.GetAll()
-                    .Where(x => x.Name.StartsWith(tbxSearchLibrarians.Text)).ToList();
-                dgwLibrarians.ClearSelection();
+                LoadLibrarians();
+            }
+            else
+            {
+                if (cbFilterLibrarians.Text == @"Search by Name")
+                {
+                    dgwLibrarians.DataSource = _librarianManager.GetAll()
+                        .Where(x => x.Name.ToLower().Contains(tbxSearchLibrarians.Text.ToLower())).ToList();
+                    dgwLibrarians.ClearSelection();
+                }
             }
         }
     }

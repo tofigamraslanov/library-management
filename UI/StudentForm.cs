@@ -2,19 +2,14 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace UI
 {
     public partial class StudentForm : Form
     {
-        StudentManager _studentManager = new StudentManager(new EfStudentDal());
+        readonly StudentManager _studentManager = new StudentManager(new EfStudentDal());
         public StudentForm()
         {
             InitializeComponent();
@@ -35,7 +30,7 @@ namespace UI
         private void StudentForm_Load(object sender, EventArgs e)
         {
             LoadStudents();
-            cbFilterStudents.Text = "Select column which you want to search by";
+            cbFilterStudents.Text = @"Select column which you want to search by";
         }
 
         private void LoadStudents()
@@ -52,11 +47,22 @@ namespace UI
             tbxPhone.Clear();
         }
 
+        private void dgwStudents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgwStudents.CurrentRow != null)
+            {
+                tbxName.Text = dgwStudents.CurrentRow.Cells[1].Value.ToString();
+                tbxDepartment.Text = dgwStudents.CurrentRow.Cells[2].Value.ToString();
+                tbxCourse.Text = dgwStudents.CurrentRow.Cells[3].Value.ToString();
+                tbxPhone.Text = dgwStudents.CurrentRow.Cells[4].Value.ToString();
+            }
+        }
+
         private void btnAddLibrarian_Click(object sender, EventArgs e)
         {
             if (tbxName.Text == "" || tbxDepartment.Text == "" || tbxCourse.Text == "" || tbxPhone.Text == "")
             {
-                MessageBox.Show("Please fill out text box!");
+                MessageBox.Show(@"Please fill out inputs!");
             }
             else
             {
@@ -69,27 +75,19 @@ namespace UI
                 });
                 ClearInputs();
                 LoadStudents();
-                MessageBox.Show("Student added succesfuly");
+                MessageBox.Show(@"Student added successfully");
             }
-        }
-
-        private void dgwStudents_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tbxName.Text = dgwStudents.CurrentRow.Cells[1].Value.ToString();
-            tbxDepartment.Text = dgwStudents.CurrentRow.Cells[2].Value.ToString();
-            tbxCourse.Text = dgwStudents.CurrentRow.Cells[3].Value.ToString();
-            tbxPhone.Text = dgwStudents.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void btnUpdateLibrarian_Click(object sender, EventArgs e)
         {
             if (tbxName.Text == "" || tbxDepartment.Text == "" || tbxCourse.Text == "" || tbxPhone.Text == "")
-                MessageBox.Show("Please select row which you want to update then update them");
+                MessageBox.Show(@"Please select a row which you want to update then update them");
             else
             {
                 _studentManager.Update(new Student
                 {
-                    Id = Convert.ToInt32(dgwStudents.CurrentRow.Cells[0].Value),
+                    Id = Convert.ToInt32(dgwStudents.CurrentRow?.Cells[0].Value),
                     Name = tbxName.Text,
                     Department = tbxDepartment.Text,
                     Course = Convert.ToInt32(tbxCourse.Text),
@@ -97,45 +95,53 @@ namespace UI
                 });
                 ClearInputs();
                 LoadStudents();
-                MessageBox.Show("Updated Successfully");
+                MessageBox.Show(@"Updated Successfully");
             }
         }
 
         private void btnDeleteLibrarian_Click(object sender, EventArgs e)
         {
             if (tbxName.Text == "" || tbxDepartment.Text == "" || tbxCourse.Text == "" || tbxPhone.Text == "")
-                MessageBox.Show("Please select row which you want to delete then delete it");
+                MessageBox.Show(@"Please select a row which you want to delete then delete it");
             else
             {
                 _studentManager.Delete(new Student
                 {
-                    Id = Convert.ToInt32(dgwStudents.CurrentRow.Cells[0].Value)
+                    Id = Convert.ToInt32(dgwStudents.CurrentRow?.Cells[0].Value)
                 });
                 ClearInputs();
                 LoadStudents();
-                MessageBox.Show("Deleted Successfully");
+                MessageBox.Show(@"Deleted Successfully");
             }
         }
 
         private void tbxSearchStudents_TextChanged(object sender, EventArgs e)
         {
-            if (cbFilterStudents.Text == "Search by Name")
+            string key = tbxSearchStudents.Text;
+            if (string.IsNullOrEmpty(key))
             {
-                dgwStudents.DataSource = _studentManager.GetAll()
-                    .Where(x => x.Name.StartsWith(tbxSearchStudents.Text)).ToList();
-                dgwStudents.ClearSelection();
+                LoadStudents();
             }
-            else if (cbFilterStudents.Text == "Search by Department")
+            else
             {
-                dgwStudents.DataSource = _studentManager.GetAll()
-                    .Where(x => x.Department.StartsWith(tbxSearchStudents.Text)).ToList();
-                dgwStudents.ClearSelection();
-            }
-            else if (cbFilterStudents.Text == "Search by Course")
-            {
-                dgwStudents.DataSource = _studentManager.GetAll()
-                    .Where(x => x.Course.ToString() == tbxSearchStudents.Text).ToList();
-                dgwStudents.ClearSelection();
+                if (cbFilterStudents.Text == @"Search by Name")
+                {
+                    dgwStudents.DataSource = _studentManager.GetAll()
+                        .Where(x => x.Name.ToLower().Contains(tbxSearchStudents.Text.ToLower())).ToList();
+                    dgwStudents.ClearSelection();
+                }
+                else if (cbFilterStudents.Text == @"Search by Department")
+                {
+                    dgwStudents.DataSource = _studentManager.GetAll()
+                        .Where(x => x.Department.ToLower().Contains(tbxSearchStudents.Text.ToLower())).ToList();
+                    dgwStudents.ClearSelection();
+                }
+                else if (cbFilterStudents.Text == @"Search by Course")
+                {
+                    dgwStudents.DataSource = _studentManager.GetAll()
+                        .Where(x => x.Course.ToString() == tbxSearchStudents.Text).ToList();
+                    dgwStudents.ClearSelection();
+                }
             }
         }
     }

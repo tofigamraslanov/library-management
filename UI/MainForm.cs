@@ -42,12 +42,19 @@ namespace UI
             IssueBookForm issueBookForm = new IssueBookForm();
             issueBookForm.Show();
         }
-        
+
         private void btnLibrarians_Click(object sender, EventArgs e)
         {
             this.Hide();
             LibrarianForm librarianForm = new LibrarianForm();
             librarianForm.Show();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.Show();
         }
     }
 }
