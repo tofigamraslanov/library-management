@@ -2,7 +2,6 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace UI
@@ -76,7 +75,7 @@ namespace UI
                     });
                 ClearInputs();
                 LoadBooks();
-                MessageBox.Show(@"Added Successfully");
+                MessageBox.Show(@"Book Successfully Added!");
             }
         }
 
@@ -100,7 +99,7 @@ namespace UI
                 }
                 ClearInputs();
                 LoadBooks();
-                MessageBox.Show(@"Updated Successfully");
+                MessageBox.Show(@"Book Successfully Updated!");
             }
         }
 
@@ -117,7 +116,7 @@ namespace UI
                     });
                 ClearInputs();
                 LoadBooks();
-                MessageBox.Show(@"Deleted Successfully");
+                MessageBox.Show(@"Book Successfully Deleted!");
             }
         }
 
@@ -126,22 +125,18 @@ namespace UI
         {
             string key = tbxSearchBooks.Text;
             if (string.IsNullOrEmpty(key))
-            {
                 LoadBooks();
-            }
             else
             {
 
                 if (cbFilterBooks.Text == @"Search by Name")
                 {
-                    dgwBooks.DataSource = _bookManager.GetAll()
-                        .Where(x => x.Name.ToLower().Contains(tbxSearchBooks.Text.ToLower())).ToList();
+                    dgwBooks.DataSource = _bookManager.GetByName(key);
                     dgwBooks.ClearSelection();
                 }
                 else if (cbFilterBooks.Text == @"Search by Author")
                 {
-                    dgwBooks.DataSource = _bookManager.GetAll()
-                        .Where(x => x.Author.Contains(tbxSearchBooks.Text)).ToList();
+                    dgwBooks.DataSource = _bookManager.GetByAuthor(key);
                     dgwBooks.ClearSelection();
                 }
             }

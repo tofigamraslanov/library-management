@@ -98,10 +98,11 @@ namespace UI
                         IssueDate = dtpIssueDate.Value
                     });
 
-                LoadIssueBooks();
                 ClearInputs();
+                cbBookNameIB.Items.Clear();
+                LoadIssueBooks();
                 FillBooks();
-                MessageBox.Show(@"Book Successfully Issued");
+                MessageBox.Show(@"Book Successfully Issued!");
             }
         }
 
@@ -122,8 +123,10 @@ namespace UI
                         IssueDate = Convert.ToDateTime(dtpIssueDate?.Value)
                     });
                 ClearInputs();
+                cbBookNameIB.Items.Clear();
                 LoadIssueBooks();
-                MessageBox.Show(@"Updated Successfully");
+                FillBooks();
+                MessageBox.Show(@"IssueBook Successfully Updated!");
             }
         }
 
@@ -143,9 +146,10 @@ namespace UI
                         StudentId = studentId
                     });
                 ClearInputs();
+                cbBookNameIB.Items.Clear();
                 LoadIssueBooks();
                 FillBooks();
-                MessageBox.Show(@"Book Successfully Returned");
+                MessageBox.Show(@"Book Successfully Returned!");
             }
         }
 
@@ -160,14 +164,12 @@ namespace UI
             {
                 if (cbFilterIssueBooks.Text == @"Search by Student Name")
                 {
-                    dgwIssueBooks.DataSource = _issueBookManager.GetIssueBookDetails()
-                        .Where(x => x.StudentName.StartsWith(tbxSearchIssueBooks.Text)).ToList();
+                    dgwIssueBooks.DataSource = _issueBookManager.GetByStudentName(key);
                     dgwIssueBooks.ClearSelection();
                 }
                 else if (cbFilterIssueBooks.Text == @"Search by Book Name")
                 {
-                    dgwIssueBooks.DataSource = _issueBookManager.GetIssueBookDetails()
-                        .Where(x => x.BookName.StartsWith(tbxSearchIssueBooks.Text)).ToList();
+                    dgwIssueBooks.DataSource = _issueBookManager.GetByBookName(key);
                     dgwIssueBooks.ClearSelection();
                 }
             }

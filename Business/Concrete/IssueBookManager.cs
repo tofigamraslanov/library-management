@@ -1,18 +1,16 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using System;
+using Entities.DTOs;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Entities.DTOs;
 
 namespace Business.Concrete
 {
     public class IssueBookManager : IIssueBookService
     {
-        IIssueBookDal _issueBookDal;
-        private IBookService _bookService;
+        readonly IIssueBookDal _issueBookDal;
+        private readonly IBookService _bookService;
 
         public IssueBookManager(IIssueBookDal issueBookDal, IBookService bookService)
         {
@@ -25,12 +23,26 @@ namespace Business.Concrete
             return _issueBookDal.GetIssueBookDetails();
         }
 
+        public List<IssueBookDetailsDto> GetByStudentName(string studentName)
+        {
+            return _issueBookDal.GetIssueBookDetails().Where(c => c.StudentName.ToLower().Contains(studentName.ToLower())).ToList();
+        }
+
+        public List<IssueBookDetailsDto> GetByBookName(string bookName)
+        {
+            return _issueBookDal.GetIssueBookDetails().Where(c => c.BookName.ToLower().Contains(bookName.ToLower())).ToList();
+
+        }
+
         public void Add(IssueBook issueBook)
         {
             _issueBookDal.Add(issueBook);
             var book = _bookService.GetAll().SingleOrDefault(i => i.Id == issueBook.BookId);
-            book.Quantity--;
-            _bookService.Update(book);
+            if (book != null)
+            {
+                book.Quantity--;
+                _bookService.Update(book);
+            }
         }
 
         public void Delete(IssueBook issueBook)
@@ -40,9 +52,11 @@ namespace Business.Concrete
             if (books.Count > 0)
             {
                 var book = books.SingleOrDefault(i => i.Id == issueBook.BookId);
-                book.Quantity++;
-                _bookService.Update(book);
-
+                if (book != null)
+                {
+                    book.Quantity++;
+                    _bookService.Update(book);
+                }
             }
         }
 
@@ -59,6 +73,12 @@ namespace Business.Concrete
         public void Update(IssueBook issueBook)
         {
             _issueBookDal.Update(issueBook);
-        }
+            var book = _bookService.GetAll().SingleOrDefault(i => i.Id == issueBook.BookId);
+            if (book != null)
+            {
+                book.Quantity--;
+                _bookService.Update(book);
+            }
+        } 
     }
 }

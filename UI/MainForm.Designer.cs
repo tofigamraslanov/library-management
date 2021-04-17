@@ -88,12 +88,12 @@ namespace UI
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(464, 0);
+            this.button8.Location = new System.Drawing.Point(518, 0);
             this.button8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(348, 45);
             this.button8.TabIndex = 2;
-            this.button8.Text = "Copyright   | 2020";
+            this.button8.Text = "Copyright  ASOIU | 2020";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // label1

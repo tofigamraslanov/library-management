@@ -7,7 +7,7 @@ namespace Business.Concrete
 {
     public class LibrarianManager : ILibrarianService
     {
-        private ILibrarianDal _librarianDal;
+        private readonly ILibrarianDal _librarianDal;
 
         public LibrarianManager(ILibrarianDal librarianDal)
         {
@@ -22,6 +22,11 @@ namespace Business.Concrete
         public Librarian GetById(int id)
         {
             return _librarianDal.Get(l => l.Id == id);
+        }
+
+        public List<Librarian> GetByName(string name)
+        {
+            return _librarianDal.GetAll(l => l.Name.ToLower().Contains(name.ToLower()));
         }
 
         public void Add(Librarian librarian)

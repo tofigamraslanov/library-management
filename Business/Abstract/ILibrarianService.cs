@@ -7,6 +7,7 @@ namespace Business.Abstract
     {
         List<Librarian> GetAll();
         Librarian GetById(int id);
+        List<Librarian> GetByName(string name);
         void Add(Librarian librarian);
         void Update(Librarian librarian);
         void Delete(Librarian librarian);

@@ -2,14 +2,13 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace UI
 {
     public partial class LibrarianForm : Form
     {
-        LibrarianManager _librarianManager = new LibrarianManager(new EfLibrarianDal());
+        readonly LibrarianManager _booksManager = new LibrarianManager(new EfLibrarianDal());
         public LibrarianForm()
         {
             InitializeComponent();
@@ -35,7 +34,7 @@ namespace UI
 
         private void LoadLibrarians()
         {
-            dgwLibrarians.DataSource = _librarianManager.GetAll();
+            dgwLibrarians.DataSource = _booksManager.GetAll();
             dgwLibrarians.ClearSelection();
         }
 
@@ -64,7 +63,7 @@ namespace UI
             }
             else
             {
-                _librarianManager.Add(new Librarian
+                _booksManager.Add(new Librarian
                 {
                     Name = tbxName.Text,
                     Phone = tbxPhone.Text,
@@ -72,7 +71,7 @@ namespace UI
                 });
                 ClearInputs();
                 LoadLibrarians();
-                MessageBox.Show(@"Librarian Added Successfully");
+                MessageBox.Show(@"Librarian Successfully Added!");
             }
         }
 
@@ -83,7 +82,7 @@ namespace UI
             else
             {
                 if (dgwLibrarians.CurrentRow != null)
-                    _librarianManager.Update(new Librarian
+                    _booksManager.Update(new Librarian
                     {
                         Id = Convert.ToInt32(dgwLibrarians.CurrentRow.Cells[0].Value),
                         Name = tbxName.Text,
@@ -92,7 +91,7 @@ namespace UI
                     });
                 ClearInputs();
                 LoadLibrarians();
-                MessageBox.Show(@"Librarian Updated Successfully");
+                MessageBox.Show(@"Librarian Successfully Updated!");
             }
         }
 
@@ -102,13 +101,13 @@ namespace UI
                 MessageBox.Show(@"Please select a row which you want to delete then delete it");
             else
             {
-                _librarianManager.Delete(new Librarian
+                _booksManager.Delete(new Librarian
                 {
                     Id = Convert.ToInt32(dgwLibrarians.CurrentRow?.Cells[0].Value)
                 });
                 ClearInputs();
                 LoadLibrarians();
-                MessageBox.Show(@"Librarian Deleted Successfully");
+                MessageBox.Show(@"Librarian Successfully Deleted!");
             }
         }
 
@@ -116,15 +115,12 @@ namespace UI
         {
             string key = tbxSearchLibrarians.Text;
             if (string.IsNullOrEmpty(key))
-            {
                 LoadLibrarians();
-            }
             else
             {
                 if (cbFilterLibrarians.Text == @"Search by Name")
                 {
-                    dgwLibrarians.DataSource = _librarianManager.GetAll()
-                        .Where(x => x.Name.ToLower().Contains(tbxSearchLibrarians.Text.ToLower())).ToList();
+                    dgwLibrarians.DataSource = _booksManager.GetByName(key);
                     dgwLibrarians.ClearSelection();
                 }
             }

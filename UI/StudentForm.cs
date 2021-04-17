@@ -2,7 +2,6 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace UI
@@ -75,7 +74,7 @@ namespace UI
                 });
                 ClearInputs();
                 LoadStudents();
-                MessageBox.Show(@"Student added successfully");
+                MessageBox.Show(@"Student Successfully Added!");
             }
         }
 
@@ -95,7 +94,7 @@ namespace UI
                 });
                 ClearInputs();
                 LoadStudents();
-                MessageBox.Show(@"Updated Successfully");
+                MessageBox.Show(@"Student Successfully Updated!");
             }
         }
 
@@ -111,7 +110,7 @@ namespace UI
                 });
                 ClearInputs();
                 LoadStudents();
-                MessageBox.Show(@"Deleted Successfully");
+                MessageBox.Show(@"Student Successfully Deleted!");
             }
         }
 
@@ -126,20 +125,17 @@ namespace UI
             {
                 if (cbFilterStudents.Text == @"Search by Name")
                 {
-                    dgwStudents.DataSource = _studentManager.GetAll()
-                        .Where(x => x.Name.ToLower().Contains(tbxSearchStudents.Text.ToLower())).ToList();
+                    dgwStudents.DataSource = _studentManager.GetByName(key);
                     dgwStudents.ClearSelection();
                 }
                 else if (cbFilterStudents.Text == @"Search by Department")
                 {
-                    dgwStudents.DataSource = _studentManager.GetAll()
-                        .Where(x => x.Department.ToLower().Contains(tbxSearchStudents.Text.ToLower())).ToList();
+                    dgwStudents.DataSource = _studentManager.GetByDepartment(key);
                     dgwStudents.ClearSelection();
                 }
                 else if (cbFilterStudents.Text == @"Search by Course")
                 {
-                    dgwStudents.DataSource = _studentManager.GetAll()
-                        .Where(x => x.Course.ToString() == tbxSearchStudents.Text).ToList();
+                    dgwStudents.DataSource = _studentManager.GetByCourse(int.Parse(key));
                     dgwStudents.ClearSelection();
                 }
             }

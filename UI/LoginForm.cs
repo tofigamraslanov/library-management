@@ -14,7 +14,6 @@ namespace UI
 {
     public partial class LoginForm : Form
     {
-        LibrarianManager _librarianManager = new LibrarianManager(new EfLibrarianDal());
         public LoginForm()
         {
             InitializeComponent();
@@ -28,7 +27,7 @@ namespace UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //var result = _librarianManager.GetAll().FirstOrDefault(l => l.Name == tbxUsername.Text && l.Password == tbxPassword.Text);
+            //var result = _booksManager.GetAll().FirstOrDefault(l => l.Name == tbxUsername.Text && l.Password == tbxPassword.Text);
             if (tbxUsername.Text == "" || tbxPassword.Text == "")
                 MessageBox.Show("Please fill out username and password");
             else if (tbxUsername.Text == "Admin" && tbxPassword.Text == "12345")

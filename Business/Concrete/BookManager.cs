@@ -26,6 +26,11 @@ namespace Business.Concrete
             return _bookDal.Get(b => b.Id == id);
         }
 
+        public List<Book> GetByAuthor(string author)
+        {
+            return _bookDal.GetAll(b => b.Author.ToLower().Contains(author.ToLower()));
+        }
+
         public void Add(Book book)
         {
             _bookDal.Add(book);
@@ -41,9 +46,14 @@ namespace Business.Concrete
             _bookDal.Delete(book);
         }
 
-        public List<Book> GetByQuantity(Expression<Func<Book, bool>> filter)
+        public List<Book> GetByQuantity()
         {
-            return _bookDal.GetAll(filter);
+            return _bookDal.GetAll(c => c.Quantity > 10);
+        }
+
+        public List<Book> GetByName(string name)
+        {
+            return _bookDal.GetAll(b => b.Name.ToLower().Contains(name.ToLower()));
         }
     }
 }

@@ -9,7 +9,9 @@ namespace Business.Abstract
     {
         List<Book> GetAll();
         Book GetById(int id);
-        List<Book> GetByQuantity(Expression<Func<Book, bool>> filter);
+        List<Book> GetByQuantity();
+        List<Book> GetByName(string name);
+        List<Book> GetByAuthor(string author);
         void Add(Book book);
         void Update(Book book);
         void Delete(Book book);
