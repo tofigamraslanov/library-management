@@ -22,8 +22,8 @@ namespace UI
         private void btnBackToHomeFromLibrarians_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
 
         private void LibrarianForm_Load(object sender, EventArgs e)
@@ -124,6 +124,12 @@ namespace UI
                     dgwLibrarians.ClearSelection();
                 }
             }
+        }
+
+        private void dgwLibrarians_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2 && e.Value != null)
+                e.Value = new string('*', e.Value.ToString().Length);
         }
     }
 }

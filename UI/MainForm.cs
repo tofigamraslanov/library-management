@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -41,13 +34,6 @@ namespace UI
             this.Hide();
             IssueBookForm issueBookForm = new IssueBookForm();
             issueBookForm.Show();
-        }
-
-        private void btnLibrarians_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LibrarianForm librarianForm = new LibrarianForm();
-            librarianForm.Show();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

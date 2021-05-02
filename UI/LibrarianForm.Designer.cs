@@ -30,13 +30,13 @@ namespace UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrarianForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBackToHomeFromLibrarians = new System.Windows.Forms.Button();
+            this.btnBackToLoginFromLibrarians = new System.Windows.Forms.Button();
             this.btnUpdateLibrarian = new System.Windows.Forms.Button();
             this.btnDeleteLibrarian = new System.Windows.Forms.Button();
             this.btnAddLibrarian = new System.Windows.Forms.Button();
@@ -103,21 +103,21 @@ namespace UI
             this.label1.TabIndex = 4;
             this.label1.Text = "LIBRARY MANAGEMENT SYSTEM";
             // 
-            // btnBackToHomeFromLibrarians
+            // btnBackToLoginFromLibrarians
             // 
-            this.btnBackToHomeFromLibrarians.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnBackToHomeFromLibrarians.FlatAppearance.BorderSize = 0;
-            this.btnBackToHomeFromLibrarians.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackToHomeFromLibrarians.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBackToHomeFromLibrarians.ForeColor = System.Drawing.Color.White;
-            this.btnBackToHomeFromLibrarians.Location = new System.Drawing.Point(110, 463);
-            this.btnBackToHomeFromLibrarians.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnBackToHomeFromLibrarians.Name = "btnBackToHomeFromLibrarians";
-            this.btnBackToHomeFromLibrarians.Size = new System.Drawing.Size(200, 42);
-            this.btnBackToHomeFromLibrarians.TabIndex = 50;
-            this.btnBackToHomeFromLibrarians.Text = "Back to home";
-            this.btnBackToHomeFromLibrarians.UseVisualStyleBackColor = false;
-            this.btnBackToHomeFromLibrarians.Click += new System.EventHandler(this.btnBackToHomeFromLibrarians_Click);
+            this.btnBackToLoginFromLibrarians.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBackToLoginFromLibrarians.FlatAppearance.BorderSize = 0;
+            this.btnBackToLoginFromLibrarians.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToLoginFromLibrarians.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBackToLoginFromLibrarians.ForeColor = System.Drawing.Color.White;
+            this.btnBackToLoginFromLibrarians.Location = new System.Drawing.Point(110, 463);
+            this.btnBackToLoginFromLibrarians.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnBackToLoginFromLibrarians.Name = "btnBackToLoginFromLibrarians";
+            this.btnBackToLoginFromLibrarians.Size = new System.Drawing.Size(200, 42);
+            this.btnBackToLoginFromLibrarians.TabIndex = 50;
+            this.btnBackToLoginFromLibrarians.Text = "Back";
+            this.btnBackToLoginFromLibrarians.UseVisualStyleBackColor = false;
+            this.btnBackToLoginFromLibrarians.Click += new System.EventHandler(this.btnBackToHomeFromLibrarians_Click);
             // 
             // btnUpdateLibrarian
             // 
@@ -207,24 +207,24 @@ namespace UI
             // 
             this.dgwLibrarians.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwLibrarians.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwLibrarians.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwLibrarians.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgwLibrarians.ColumnHeadersHeight = 30;
             this.dgwLibrarians.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwLibrarians.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwLibrarians.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgwLibrarians.EnableHeadersVisualStyles = false;
             this.dgwLibrarians.Location = new System.Drawing.Point(510, 180);
             this.dgwLibrarians.Name = "dgwLibrarians";
@@ -232,6 +232,7 @@ namespace UI
             this.dgwLibrarians.Size = new System.Drawing.Size(560, 500);
             this.dgwLibrarians.TabIndex = 51;
             this.dgwLibrarians.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwLibrarians_CellClick);
+            this.dgwLibrarians.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgwLibrarians_CellFormatting);
             // 
             // tbxName
             // 
@@ -284,7 +285,7 @@ namespace UI
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.dgwLibrarians);
-            this.Controls.Add(this.btnBackToHomeFromLibrarians);
+            this.Controls.Add(this.btnBackToLoginFromLibrarians);
             this.Controls.Add(this.btnUpdateLibrarian);
             this.Controls.Add(this.btnDeleteLibrarian);
             this.Controls.Add(this.btnAddLibrarian);
@@ -312,7 +313,7 @@ namespace UI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnBackToHomeFromLibrarians;
+        private System.Windows.Forms.Button btnBackToLoginFromLibrarians;
         private System.Windows.Forms.Button btnUpdateLibrarian;
         private System.Windows.Forms.Button btnDeleteLibrarian;
         private System.Windows.Forms.Button btnAddLibrarian;

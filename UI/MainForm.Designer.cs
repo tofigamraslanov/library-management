@@ -38,7 +38,6 @@ namespace UI
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnBooks = new System.Windows.Forms.Button();
             this.btnIssueBooks = new System.Windows.Forms.Button();
-            this.btnLibrarians = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new System.Windows.Forms.Button();
@@ -114,7 +113,7 @@ namespace UI
             this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStudents.ForeColor = System.Drawing.Color.White;
-            this.btnStudents.Location = new System.Drawing.Point(923, 60);
+            this.btnStudents.Location = new System.Drawing.Point(1023, 60);
             this.btnStudents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStudents.Name = "btnStudents";
             this.btnStudents.Size = new System.Drawing.Size(99, 39);
@@ -129,7 +128,7 @@ namespace UI
             this.btnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBooks.ForeColor = System.Drawing.Color.White;
-            this.btnBooks.Location = new System.Drawing.Point(1022, 60);
+            this.btnBooks.Location = new System.Drawing.Point(1122, 60);
             this.btnBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(82, 39);
@@ -144,7 +143,7 @@ namespace UI
             this.btnIssueBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIssueBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnIssueBooks.ForeColor = System.Drawing.Color.White;
-            this.btnIssueBooks.Location = new System.Drawing.Point(1105, 60);
+            this.btnIssueBooks.Location = new System.Drawing.Point(1205, 60);
             this.btnIssueBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnIssueBooks.Name = "btnIssueBooks";
             this.btnIssueBooks.Size = new System.Drawing.Size(118, 39);
@@ -152,21 +151,6 @@ namespace UI
             this.btnIssueBooks.Text = "Issue Books";
             this.btnIssueBooks.UseVisualStyleBackColor = true;
             this.btnIssueBooks.Click += new System.EventHandler(this.btnIssueBooks_Click);
-            // 
-            // btnLibrarians
-            // 
-            this.btnLibrarians.FlatAppearance.BorderSize = 0;
-            this.btnLibrarians.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibrarians.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLibrarians.ForeColor = System.Drawing.Color.White;
-            this.btnLibrarians.Location = new System.Drawing.Point(1225, 60);
-            this.btnLibrarians.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnLibrarians.Name = "btnLibrarians";
-            this.btnLibrarians.Size = new System.Drawing.Size(108, 39);
-            this.btnLibrarians.TabIndex = 8;
-            this.btnLibrarians.Text = "Librarians";
-            this.btnLibrarians.UseVisualStyleBackColor = true;
-            this.btnLibrarians.Click += new System.EventHandler(this.btnLibrarians_Click);
             // 
             // pictureBox2
             // 
@@ -195,7 +179,7 @@ namespace UI
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Location = new System.Drawing.Point(810, 60);
+            this.btnDashboard.Location = new System.Drawing.Point(910, 60);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(104, 39);
@@ -213,7 +197,6 @@ namespace UI
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnLibrarians);
             this.Controls.Add(this.btnIssueBooks);
             this.Controls.Add(this.btnBooks);
             this.Controls.Add(this.btnStudents);
@@ -243,7 +226,6 @@ namespace UI
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnBooks;
         private System.Windows.Forms.Button btnIssueBooks;
-        private System.Windows.Forms.Button btnLibrarians;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
