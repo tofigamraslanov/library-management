@@ -82,14 +82,20 @@ namespace UI
 
         private void btnAddIssueBook_Click(object sender, EventArgs e)
         {
+            var studentId = _studentManager.GetAll().Where(c => c.Name == cbStudentNameIB.Text).FirstOrDefault().Id;
+            var bookId = _bookManager.GetAll().Where(c => c.Name == cbBookNameIB.Text).FirstOrDefault().Id;
+
             if (dtpIssueDate != null && (cbStudentNameIB.Text == "" || cbBookNameIB.Text == ""))
             {
                 MessageBox.Show(@"Please fill out inputs");
             }
+            else if (!_issueBookManager.IsAddIssueBook(studentId))
+            {
+                MessageBox.Show(@"A student can take only 5 book");
+                ClearInputs();
+            }
             else
             {
-                var studentId = _studentManager.GetAll().Where(c => c.Name == cbStudentNameIB.Text).FirstOrDefault().Id;
-                var bookId = _bookManager.GetAll().Where(c => c.Name == cbBookNameIB.Text).FirstOrDefault().Id;
                 if (dtpIssueDate != null)
                     _issueBookManager.Add(new IssueBook
                     {
@@ -129,30 +135,6 @@ namespace UI
                 MessageBox.Show(@"IssueBook Successfully Updated!");
             }
         }
-
-        private void btnDeleteIssueBook_Click(object sender, EventArgs e)
-        {
-            if (cbStudentNameIB.Text == "" || cbBookNameIB.Text == "" || dtpIssueDate?.Value == null)
-                MessageBox.Show(@"Please select a row which you want to delete then delete it");
-            else
-            {
-                var studentId = _studentManager.GetAll().Where(c => c.Name == cbStudentNameIB.Text).FirstOrDefault().Id;
-                var bookId = _bookManager.GetAll().Where(c => c.Name == cbBookNameIB.Text).FirstOrDefault().Id;
-                if (dgwIssueBooks.CurrentRow != null)
-                    _issueBookManager.Delete(new IssueBook
-                    {
-                        Id = Convert.ToInt32(dgwIssueBooks.CurrentRow.Cells[0].Value),
-                        BookId = bookId,
-                        StudentId = studentId
-                    });
-                ClearInputs();
-                cbBookNameIB.Items.Clear();
-                LoadIssueBooks();
-                FillBooks();
-                MessageBox.Show(@"Book Successfully Returned!");
-            }
-        }
-
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
             string key = tbxSearchIssueBooks.Text;

@@ -43,7 +43,6 @@ namespace UI
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdateIssueBook = new System.Windows.Forms.Button();
             this.btnAddIssueBook = new System.Windows.Forms.Button();
-            this.btnDeleteIssueBook = new System.Windows.Forms.Button();
             this.cbBookNameIB = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbStudentNameIB = new System.Windows.Forms.ComboBox();
@@ -190,7 +189,7 @@ namespace UI
             this.btnUpdateIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateIssueBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateIssueBook.Location = new System.Drawing.Point(161, 387);
+            this.btnUpdateIssueBook.Location = new System.Drawing.Point(263, 387);
             this.btnUpdateIssueBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdateIssueBook.Name = "btnUpdateIssueBook";
             this.btnUpdateIssueBook.Size = new System.Drawing.Size(110, 42);
@@ -206,7 +205,7 @@ namespace UI
             this.btnAddIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddIssueBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnAddIssueBook.Location = new System.Drawing.Point(25, 387);
+            this.btnAddIssueBook.Location = new System.Drawing.Point(71, 387);
             this.btnAddIssueBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddIssueBook.Name = "btnAddIssueBook";
             this.btnAddIssueBook.Size = new System.Drawing.Size(116, 42);
@@ -214,22 +213,6 @@ namespace UI
             this.btnAddIssueBook.Text = "Issue Book";
             this.btnAddIssueBook.UseVisualStyleBackColor = false;
             this.btnAddIssueBook.Click += new System.EventHandler(this.btnAddIssueBook_Click);
-            // 
-            // btnDeleteIssueBook
-            // 
-            this.btnDeleteIssueBook.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnDeleteIssueBook.FlatAppearance.BorderSize = 0;
-            this.btnDeleteIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteIssueBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteIssueBook.Location = new System.Drawing.Point(293, 387);
-            this.btnDeleteIssueBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnDeleteIssueBook.Name = "btnDeleteIssueBook";
-            this.btnDeleteIssueBook.Size = new System.Drawing.Size(124, 42);
-            this.btnDeleteIssueBook.TabIndex = 75;
-            this.btnDeleteIssueBook.Text = "Return Book";
-            this.btnDeleteIssueBook.UseVisualStyleBackColor = false;
-            this.btnDeleteIssueBook.Click += new System.EventHandler(this.btnDeleteIssueBook_Click);
             // 
             // cbBookNameIB
             // 
@@ -300,7 +283,6 @@ namespace UI
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnUpdateIssueBook);
             this.Controls.Add(this.btnAddIssueBook);
-            this.Controls.Add(this.btnDeleteIssueBook);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IssueBookForm";
@@ -329,7 +311,6 @@ namespace UI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUpdateIssueBook;
         private System.Windows.Forms.Button btnAddIssueBook;
-        private System.Windows.Forms.Button btnDeleteIssueBook;
         private System.Windows.Forms.ComboBox cbBookNameIB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbStudentNameIB;

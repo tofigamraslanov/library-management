@@ -79,6 +79,14 @@ namespace Business.Concrete
                 book.Quantity--;
                 _bookService.Update(book);
             }
-        } 
+        }
+
+        public bool IsAddIssueBook(int studentId)
+        {
+            var bookCount = _issueBookDal.GetAll(ib => ib.StudentId == studentId).Count;
+            if (bookCount == 5)
+                return false;
+            return true;
+        }
     }
 }

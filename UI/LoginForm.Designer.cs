@@ -67,12 +67,12 @@ namespace UI
             this.lblAdmin.AutoSize = true;
             this.lblAdmin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAdmin.LinkColor = System.Drawing.Color.Crimson;
-            this.lblAdmin.Location = new System.Drawing.Point(174, 300);
+            this.lblAdmin.Location = new System.Drawing.Point(243, 350);
             this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(62, 21);
+            this.lblAdmin.Size = new System.Drawing.Size(160, 21);
             this.lblAdmin.TabIndex = 8;
             this.lblAdmin.TabStop = true;
-            this.lblAdmin.Text = "Admin";
+            this.lblAdmin.Text = "Continue as Admin";
             this.lblAdmin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAdmin_LinkClicked);
             // 
             // cbxShowOrHide

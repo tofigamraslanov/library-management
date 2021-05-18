@@ -41,6 +41,7 @@ namespace UI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnReturnBooks = new System.Windows.Forms.Button();
             this.panelNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFooter.SuspendLayout();
@@ -92,7 +93,7 @@ namespace UI
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(348, 45);
             this.button8.TabIndex = 2;
-            this.button8.Text = "Copyright  ASOIU | 2020";
+            this.button8.Text = "Copyright  ASOIU | 2021";
             this.button8.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -113,7 +114,7 @@ namespace UI
             this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnStudents.ForeColor = System.Drawing.Color.White;
-            this.btnStudents.Location = new System.Drawing.Point(1023, 60);
+            this.btnStudents.Location = new System.Drawing.Point(925, 60);
             this.btnStudents.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStudents.Name = "btnStudents";
             this.btnStudents.Size = new System.Drawing.Size(99, 39);
@@ -128,7 +129,7 @@ namespace UI
             this.btnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBooks.ForeColor = System.Drawing.Color.White;
-            this.btnBooks.Location = new System.Drawing.Point(1122, 60);
+            this.btnBooks.Location = new System.Drawing.Point(1024, 60);
             this.btnBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBooks.Name = "btnBooks";
             this.btnBooks.Size = new System.Drawing.Size(82, 39);
@@ -143,7 +144,7 @@ namespace UI
             this.btnIssueBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIssueBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnIssueBooks.ForeColor = System.Drawing.Color.White;
-            this.btnIssueBooks.Location = new System.Drawing.Point(1205, 60);
+            this.btnIssueBooks.Location = new System.Drawing.Point(1107, 60);
             this.btnIssueBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnIssueBooks.Name = "btnIssueBooks";
             this.btnIssueBooks.Size = new System.Drawing.Size(118, 39);
@@ -179,7 +180,7 @@ namespace UI
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Location = new System.Drawing.Point(910, 60);
+            this.btnDashboard.Location = new System.Drawing.Point(812, 60);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(104, 39);
@@ -188,12 +189,28 @@ namespace UI
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // btnReturnBooks
+            // 
+            this.btnReturnBooks.FlatAppearance.BorderSize = 0;
+            this.btnReturnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnBooks.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReturnBooks.ForeColor = System.Drawing.Color.White;
+            this.btnReturnBooks.Location = new System.Drawing.Point(1221, 60);
+            this.btnReturnBooks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnReturnBooks.Name = "btnReturnBooks";
+            this.btnReturnBooks.Size = new System.Drawing.Size(118, 39);
+            this.btnReturnBooks.TabIndex = 11;
+            this.btnReturnBooks.Text = "Return Books";
+            this.btnReturnBooks.UseVisualStyleBackColor = true;
+            this.btnReturnBooks.Click += new System.EventHandler(this.btnReturnBooks_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(1370, 725);
+            this.Controls.Add(this.btnReturnBooks);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -231,5 +248,6 @@ namespace UI
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnReturnBooks;
     }
 }
