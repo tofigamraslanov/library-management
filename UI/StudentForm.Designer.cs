@@ -30,8 +30,8 @@ namespace UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@ namespace UI
             this.label4 = new System.Windows.Forms.Label();
             this.tbxSearchStudents = new System.Windows.Forms.TextBox();
             this.cbFilterStudents = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwStudents)).BeginInit();
@@ -76,7 +77,7 @@ namespace UI
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -107,21 +108,21 @@ namespace UI
             // 
             // tbxCourse
             // 
-            this.tbxCourse.Location = new System.Drawing.Point(190, 334);
+            this.tbxCourse.Location = new System.Drawing.Point(193, 333);
             this.tbxCourse.Name = "tbxCourse";
             this.tbxCourse.Size = new System.Drawing.Size(197, 23);
             this.tbxCourse.TabIndex = 65;
             // 
             // tbxDepartment
             // 
-            this.tbxDepartment.Location = new System.Drawing.Point(190, 294);
+            this.tbxDepartment.Location = new System.Drawing.Point(193, 293);
             this.tbxDepartment.Name = "tbxDepartment";
             this.tbxDepartment.Size = new System.Drawing.Size(197, 23);
             this.tbxDepartment.TabIndex = 64;
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(190, 254);
+            this.tbxName.Location = new System.Drawing.Point(193, 253);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(197, 23);
             this.tbxName.TabIndex = 63;
@@ -130,24 +131,24 @@ namespace UI
             // 
             this.dgwStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwStudents.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgwStudents.ColumnHeadersHeight = 30;
             this.dgwStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwStudents.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwStudents.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgwStudents.EnableHeadersVisualStyles = false;
             this.dgwStudents.Location = new System.Drawing.Point(510, 180);
             this.dgwStudents.Name = "dgwStudents";
@@ -163,7 +164,7 @@ namespace UI
             this.btnBackToHomeFromLibrarians.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToHomeFromLibrarians.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBackToHomeFromLibrarians.ForeColor = System.Drawing.Color.White;
-            this.btnBackToHomeFromLibrarians.Location = new System.Drawing.Point(101, 486);
+            this.btnBackToHomeFromLibrarians.Location = new System.Drawing.Point(110, 485);
             this.btnBackToHomeFromLibrarians.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBackToHomeFromLibrarians.Name = "btnBackToHomeFromLibrarians";
             this.btnBackToHomeFromLibrarians.Size = new System.Drawing.Size(200, 42);
@@ -179,10 +180,10 @@ namespace UI
             this.btnUpdateLibrarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateLibrarian.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateLibrarian.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateLibrarian.Location = new System.Drawing.Point(145, 426);
+            this.btnUpdateLibrarian.Location = new System.Drawing.Point(110, 424);
             this.btnUpdateLibrarian.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdateLibrarian.Name = "btnUpdateLibrarian";
-            this.btnUpdateLibrarian.Size = new System.Drawing.Size(108, 42);
+            this.btnUpdateLibrarian.Size = new System.Drawing.Size(88, 42);
             this.btnUpdateLibrarian.TabIndex = 60;
             this.btnUpdateLibrarian.Text = "Update";
             this.btnUpdateLibrarian.UseVisualStyleBackColor = false;
@@ -195,10 +196,10 @@ namespace UI
             this.btnDeleteLibrarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteLibrarian.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeleteLibrarian.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteLibrarian.Location = new System.Drawing.Point(285, 426);
+            this.btnDeleteLibrarian.Location = new System.Drawing.Point(215, 425);
             this.btnDeleteLibrarian.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDeleteLibrarian.Name = "btnDeleteLibrarian";
-            this.btnDeleteLibrarian.Size = new System.Drawing.Size(102, 42);
+            this.btnDeleteLibrarian.Size = new System.Drawing.Size(85, 42);
             this.btnDeleteLibrarian.TabIndex = 59;
             this.btnDeleteLibrarian.Text = "Delete";
             this.btnDeleteLibrarian.UseVisualStyleBackColor = false;
@@ -211,10 +212,10 @@ namespace UI
             this.btnAddLibrarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddLibrarian.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddLibrarian.ForeColor = System.Drawing.Color.White;
-            this.btnAddLibrarian.Location = new System.Drawing.Point(25, 426);
+            this.btnAddLibrarian.Location = new System.Drawing.Point(25, 424);
             this.btnAddLibrarian.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddLibrarian.Name = "btnAddLibrarian";
-            this.btnAddLibrarian.Size = new System.Drawing.Size(88, 42);
+            this.btnAddLibrarian.Size = new System.Drawing.Size(69, 42);
             this.btnAddLibrarian.TabIndex = 58;
             this.btnAddLibrarian.Text = "Add";
             this.btnAddLibrarian.UseVisualStyleBackColor = false;
@@ -258,7 +259,7 @@ namespace UI
             // 
             // tbxPhone
             // 
-            this.tbxPhone.Location = new System.Drawing.Point(190, 374);
+            this.tbxPhone.Location = new System.Drawing.Point(193, 373);
             this.tbxPhone.Name = "tbxPhone";
             this.tbxPhone.Size = new System.Drawing.Size(197, 23);
             this.tbxPhone.TabIndex = 67;
@@ -295,12 +296,29 @@ namespace UI
             this.cbFilterStudents.Size = new System.Drawing.Size(260, 23);
             this.cbFilterStudents.TabIndex = 97;
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(315, 426);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 42);
+            this.btnReset.TabIndex = 113;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.tbxSearchStudents);
             this.Controls.Add(this.cbFilterStudents);
             this.Controls.Add(this.tbxPhone);
@@ -352,5 +370,6 @@ namespace UI
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox tbxSearchStudents;
         private System.Windows.Forms.ComboBox cbFilterStudents;
+        private System.Windows.Forms.Button btnReset;
     }
 }

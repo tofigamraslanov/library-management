@@ -10,8 +10,10 @@ namespace UI
     {
         readonly IssueBookManager _issueBookManager =
            new IssueBookManager(new EfIssueBookDal(), new BookManager(new EfBookDal()));
-
-        readonly ReturnBookManager _returnBookManager = new ReturnBookManager(new EfReturnBookDal());
+        readonly ReturnBookManager _returnBookManager = new ReturnBookManager(
+            new EfReturnBookDal(),
+            new IssueBookManager(new EfIssueBookDal(),
+                new BookManager(new EfBookDal())));
         readonly BookManager _bookManager = new BookManager(new EfBookDal());
         readonly StudentManager _studentManager = new StudentManager(new EfStudentDal());
         public ReturnBookForm()
@@ -99,7 +101,7 @@ namespace UI
                     BookId = bookId,
                     IssueDate = dtpIssueDateRB.Value,
                     ReturnDate = dtpReturnDateRB.Value,
-                    Fine = int.Parse(tbxFine.Text.Substring(2))
+                    Fine = int.Parse(tbxFine.Text)
                 });
 
                 ClearInputs();
@@ -124,7 +126,7 @@ namespace UI
                     BookId = bookId,
                     IssueDate = dtpIssueDateRB.Value,
                     ReturnDate = dtpReturnDateRB.Value,
-                    Fine = int.Parse(tbxFine.Text.Substring(2))
+                    Fine = int.Parse(tbxFine.Text)
                 });
 
                 ClearInputs();
@@ -139,16 +141,54 @@ namespace UI
             var difference = dtpReturnDateRB.Value.Date - dtpIssueDateRB.Value.Date;
             var days = difference.Days;
             var fine = 0;
-            if (days < 5)
+            if (days < 7)
             {
                 fine = 0;
-                tbxFine.Text = @"No Fine";
+                tbxFine.Text = @"0";
             }
             else
             {
-                fine = days - 5;
-                tbxFine.Text = @"Rs" + (fine * 50);
+                fine = days - 7;
+                tbxFine.Text = (fine * 10).ToString();
             }
+        }
+
+        private void tbxSearchIssueBooks_TextChanged(object sender, EventArgs e)
+        {
+            string key = tbxSearchIssueBooks.Text;
+            if (string.IsNullOrEmpty(key))
+            {
+                LoadIssueBooks();
+                LoadReturnBooks();
+            }
+            else
+            {
+                if (cbFilterIssueBooks.Text == @"Search by Student Name in Book Issued")
+                {
+                    dgwIssueBooksRB.DataSource = _issueBookManager.GetByStudentName(key);
+                    dgwIssueBooksRB.ClearSelection();
+                }
+                else if (cbFilterIssueBooks.Text == @"Search by Book Name in Book Issued")
+                {
+                    dgwIssueBooksRB.DataSource = _issueBookManager.GetByBookName(key);
+                    dgwIssueBooksRB.ClearSelection();
+                }
+                else if (cbFilterIssueBooks.Text == @"Search by Student Name in Book Returned")
+                {
+                    dgwReturnBooks.DataSource = _returnBookManager.GetByStudentName(key);
+                    dgwReturnBooks.ClearSelection();
+                }
+                else if (cbFilterIssueBooks.Text == @"Search by Book Name in Book Returned")
+                {
+                    dgwReturnBooks.DataSource = _returnBookManager.GetByBookName(key);
+                    dgwReturnBooks.ClearSelection();
+                }
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ClearInputs();
         }
     }
 }

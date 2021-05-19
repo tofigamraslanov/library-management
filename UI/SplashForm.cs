@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -17,7 +10,7 @@ namespace UI
             InitializeComponent();
         }
 
-        int _startPoint = 0;
+        int _startPoint;
 
         private void SplashForm_Load(object sender, EventArgs e)
         {
@@ -28,15 +21,13 @@ namespace UI
         {
             _startPoint += 1;
             progressBar.Value = _startPoint;
-            persentage.Text = _startPoint + " %";
-            if (progressBar.Value == 100)
-            {
-                progressBar.Value = 0;
-                timer1.Stop();
-                LoginForm loginForm = new LoginForm();
-                loginForm.Show();
-                this.Hide();
-            }
+            lblPercentage.Text = _startPoint + @" %";
+            if (progressBar.Value != 100) return;
+            progressBar.Value = 0;
+            timer1.Stop();
+            var loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

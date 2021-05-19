@@ -40,5 +40,10 @@ namespace UI
             var adminLoginForm = new AdminLoginForm();
             adminLoginForm.Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

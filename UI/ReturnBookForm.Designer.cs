@@ -30,10 +30,10 @@ namespace UI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReturnBookForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@ namespace UI
             this.tbxFine = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnCalculateFine = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwIssueBooksRB)).BeginInit();
@@ -84,7 +85,7 @@ namespace UI
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -153,7 +154,7 @@ namespace UI
             this.dtpIssueDateRB.Name = "dtpIssueDateRB";
             this.dtpIssueDateRB.Size = new System.Drawing.Size(208, 23);
             this.dtpIssueDateRB.TabIndex = 97;
-            this.dtpIssueDateRB.Value = new System.DateTime(2020, 2, 21, 18, 46, 0, 0);
+            this.dtpIssueDateRB.Value = new System.DateTime(2021, 5, 15, 0, 0, 0, 0);
             // 
             // lblBookId
             // 
@@ -202,7 +203,7 @@ namespace UI
             this.btnUpdateReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateReturnBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateReturnBook.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateReturnBook.Location = new System.Drawing.Point(262, 449);
+            this.btnUpdateReturnBook.Location = new System.Drawing.Point(177, 449);
             this.btnUpdateReturnBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdateReturnBook.Name = "btnUpdateReturnBook";
             this.btnUpdateReturnBook.Size = new System.Drawing.Size(110, 42);
@@ -218,7 +219,7 @@ namespace UI
             this.btnReturnIssueBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturnIssueBook.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnReturnIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnReturnIssueBook.Location = new System.Drawing.Point(77, 449);
+            this.btnReturnIssueBook.Location = new System.Drawing.Point(32, 449);
             this.btnReturnIssueBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnReturnIssueBook.Name = "btnReturnIssueBook";
             this.btnReturnIssueBook.Size = new System.Drawing.Size(116, 42);
@@ -233,13 +234,16 @@ namespace UI
             this.tbxSearchIssueBooks.Name = "tbxSearchIssueBooks";
             this.tbxSearchIssueBooks.Size = new System.Drawing.Size(260, 23);
             this.tbxSearchIssueBooks.TabIndex = 103;
+            this.tbxSearchIssueBooks.TextChanged += new System.EventHandler(this.tbxSearchIssueBooks_TextChanged);
             // 
             // cbFilterIssueBooks
             // 
             this.cbFilterIssueBooks.FormattingEnabled = true;
             this.cbFilterIssueBooks.Items.AddRange(new object[] {
-            "Search by Student Name",
-            "Search by Book Name"});
+            "Search by Student Name in Book Issued",
+            "Search by Book Name in Book Issued",
+            "Search by Student Name in Book Returned",
+            "Search by Book Name in Book Returned"});
             this.cbFilterIssueBooks.Location = new System.Drawing.Point(527, 125);
             this.cbFilterIssueBooks.Name = "cbFilterIssueBooks";
             this.cbFilterIssueBooks.Size = new System.Drawing.Size(260, 23);
@@ -249,24 +253,24 @@ namespace UI
             // 
             this.dgwIssueBooksRB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwIssueBooksRB.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwIssueBooksRB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwIssueBooksRB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgwIssueBooksRB.ColumnHeadersHeight = 30;
             this.dgwIssueBooksRB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwIssueBooksRB.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwIssueBooksRB.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgwIssueBooksRB.EnableHeadersVisualStyles = false;
             this.dgwIssueBooksRB.Location = new System.Drawing.Point(527, 180);
             this.dgwIssueBooksRB.Name = "dgwIssueBooksRB";
@@ -303,24 +307,24 @@ namespace UI
             // 
             this.dgwReturnBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwReturnBooks.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgwReturnBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwReturnBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgwReturnBooks.ColumnHeadersHeight = 30;
             this.dgwReturnBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwReturnBooks.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ScrollBar;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwReturnBooks.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgwReturnBooks.EnableHeadersVisualStyles = false;
             this.dgwReturnBooks.Location = new System.Drawing.Point(528, 449);
             this.dgwReturnBooks.Name = "dgwReturnBooks";
@@ -335,7 +339,7 @@ namespace UI
             this.dtpReturnDateRB.Name = "dtpReturnDateRB";
             this.dtpReturnDateRB.Size = new System.Drawing.Size(208, 23);
             this.dtpReturnDateRB.TabIndex = 108;
-            this.dtpReturnDateRB.Value = new System.DateTime(2020, 2, 21, 18, 46, 0, 0);
+            this.dtpReturnDateRB.Value = new System.DateTime(2021, 5, 18, 16, 30, 25, 0);
             // 
             // label6
             // 
@@ -384,12 +388,29 @@ namespace UI
             this.btnCalculateFine.UseVisualStyleBackColor = false;
             this.btnCalculateFine.Click += new System.EventHandler(this.btnCalculateFine_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(315, 449);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(110, 42);
+            this.btnReset.TabIndex = 112;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // ReturnBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnCalculateFine);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbxFine);
@@ -429,7 +450,6 @@ namespace UI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbStudentNameRB;
@@ -452,5 +472,7 @@ namespace UI
         private System.Windows.Forms.TextBox tbxFine;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCalculateFine;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnReset;
     }
 }

@@ -156,5 +156,10 @@ namespace UI
                 }
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ClearInputs();
+        }
     }
 }

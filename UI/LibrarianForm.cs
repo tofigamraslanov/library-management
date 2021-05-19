@@ -131,5 +131,10 @@ namespace UI
             if (e.ColumnIndex == 2 && e.Value != null)
                 e.Value = new string('*', e.Value.ToString().Length);
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ClearInputs();
+        }
     }
 }
