@@ -2,6 +2,7 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace UI
@@ -105,19 +106,27 @@ namespace UI
 
         private void btnDeleteBook_Click(object sender, EventArgs e)
         {
-            if (tbxName.Text == "" || tbxAuthor.Text == "" || tbxPrice.Text == "" || tbxQuantity.Text == "" || dtpPublishDate?.Value == null)
-                MessageBox.Show(@"Please select a row which you want to delete then delete it");
-            else
+            try
             {
-                if (dgwBooks.CurrentRow != null)
-                    _bookManager.Delete(new Book
-                    {
-                        Id = Convert.ToInt32(dgwBooks.CurrentRow.Cells[0].Value),
-                    });
-                ClearInputs();
-                LoadBooks();
-                MessageBox.Show(@"Book Successfully Deleted!");
+                if (tbxName.Text == "" || tbxAuthor.Text == "" || tbxPrice.Text == "" || tbxQuantity.Text == "" || dtpPublishDate?.Value == null)
+                    MessageBox.Show(@"Please select a row which you want to delete then delete it");
+                else
+                {
+                    if (dgwBooks.CurrentRow != null)
+                        _bookManager.Delete(new Book
+                        {
+                            Id = Convert.ToInt32(dgwBooks.CurrentRow.Cells[0].Value),
+                        });
+                    ClearInputs();
+                    LoadBooks();
+                    MessageBox.Show(@"Book Successfully Deleted!");
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"The delete statement conflicted with the reference constraint");
+            }
+
         }
 
 

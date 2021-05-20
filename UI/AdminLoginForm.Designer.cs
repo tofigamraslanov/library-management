@@ -37,14 +37,16 @@ namespace UI
             this.panelNavbar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxShowOrHideAdmin
             // 
             this.cbxShowOrHideAdmin.AutoSize = true;
-            this.cbxShowOrHideAdmin.Location = new System.Drawing.Point(246, 152);
+            this.cbxShowOrHideAdmin.Location = new System.Drawing.Point(281, 261);
             this.cbxShowOrHideAdmin.Name = "cbxShowOrHideAdmin";
             this.cbxShowOrHideAdmin.Size = new System.Drawing.Size(108, 19);
             this.cbxShowOrHideAdmin.TabIndex = 10;
@@ -57,7 +59,7 @@ namespace UI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(44, 121);
+            this.label4.Location = new System.Drawing.Point(79, 230);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 21);
@@ -66,7 +68,7 @@ namespace UI
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(154, 123);
+            this.tbxPassword.Location = new System.Drawing.Point(189, 232);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(200, 23);
@@ -79,7 +81,7 @@ namespace UI
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(122, 191);
+            this.btnLogin.Location = new System.Drawing.Point(157, 300);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(155, 36);
             this.btnLogin.TabIndex = 11;
@@ -96,7 +98,7 @@ namespace UI
             this.panelNavbar.Location = new System.Drawing.Point(0, 0);
             this.panelNavbar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelNavbar.Name = "panelNavbar";
-            this.panelNavbar.Size = new System.Drawing.Size(401, 46);
+            this.panelNavbar.Size = new System.Drawing.Size(497, 46);
             this.panelNavbar.TabIndex = 12;
             // 
             // label1
@@ -104,7 +106,7 @@ namespace UI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(134, 9);
+            this.label1.Location = new System.Drawing.Point(179, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 21);
@@ -122,12 +124,23 @@ namespace UI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(169, 67);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(160, 133);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
             // AdminLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(401, 273);
+            this.ClientSize = new System.Drawing.Size(497, 380);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panelNavbar);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cbxShowOrHideAdmin);
@@ -140,6 +153,7 @@ namespace UI
             this.panelNavbar.ResumeLayout(false);
             this.panelNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +168,6 @@ namespace UI
         private System.Windows.Forms.Panel panelNavbar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

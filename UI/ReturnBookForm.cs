@@ -37,6 +37,7 @@ namespace UI
         {
             LoadIssueBooks();
             LoadReturnBooks();
+            cbFilterIssueBooks.Text = @"Select column which you want to search by";
         }
 
         private void LoadIssueBooks()

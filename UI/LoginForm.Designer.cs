@@ -80,7 +80,7 @@ namespace UI
             // cbxShowOrHide
             // 
             this.cbxShowOrHide.AutoSize = true;
-            this.cbxShowOrHide.Location = new System.Drawing.Point(243, 209);
+            this.cbxShowOrHide.Location = new System.Drawing.Point(268, 211);
             this.cbxShowOrHide.Name = "cbxShowOrHide";
             this.cbxShowOrHide.Size = new System.Drawing.Size(108, 19);
             this.cbxShowOrHide.TabIndex = 7;
@@ -108,9 +108,9 @@ namespace UI
             this.label3.Location = new System.Drawing.Point(40, 137);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.Size = new System.Drawing.Size(128, 21);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Username";
+            this.label3.Text = "Librarian Name";
             // 
             // btnLogin
             // 
@@ -128,7 +128,7 @@ namespace UI
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(151, 180);
+            this.tbxPassword.Location = new System.Drawing.Point(176, 182);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(200, 23);
@@ -137,7 +137,7 @@ namespace UI
             // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(151, 137);
+            this.tbxUsername.Location = new System.Drawing.Point(176, 137);
             this.tbxUsername.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(200, 23);
@@ -148,12 +148,12 @@ namespace UI
             this.lblUserLogin.AutoSize = true;
             this.lblUserLogin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUserLogin.ForeColor = System.Drawing.Color.Crimson;
-            this.lblUserLogin.Location = new System.Drawing.Point(139, 58);
+            this.lblUserLogin.Location = new System.Drawing.Point(109, 57);
             this.lblUserLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserLogin.Name = "lblUserLogin";
-            this.lblUserLogin.Size = new System.Drawing.Size(133, 25);
+            this.lblUserLogin.Size = new System.Drawing.Size(190, 25);
             this.lblUserLogin.TabIndex = 0;
-            this.lblUserLogin.Text = "USER LOGIN";
+            this.lblUserLogin.Text = "LIBRARIAN LOGIN";
             // 
             // label1
             // 

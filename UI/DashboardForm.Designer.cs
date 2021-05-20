@@ -54,6 +54,11 @@ namespace UI
             this.lblIssuedBooksCount = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lblReturnBooksCount = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,6 +73,9 @@ namespace UI
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,8 +98,8 @@ namespace UI
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
@@ -125,7 +133,7 @@ namespace UI
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.lblStudentsCount);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(160, 170);
+            this.panel2.Location = new System.Drawing.Point(57, 153);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 200);
             this.panel2.TabIndex = 4;
@@ -181,7 +189,7 @@ namespace UI
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.lblLibrariansCount);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(640, 170);
+            this.panel4.Location = new System.Drawing.Point(746, 153);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 200);
             this.panel4.TabIndex = 14;
@@ -236,7 +244,7 @@ namespace UI
             this.panel6.Controls.Add(this.pictureBox4);
             this.panel6.Controls.Add(this.lblBooksCount);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(160, 440);
+            this.panel6.Location = new System.Drawing.Point(57, 436);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(300, 200);
             this.panel6.TabIndex = 14;
@@ -291,7 +299,7 @@ namespace UI
             this.panel8.Controls.Add(this.pictureBox5);
             this.panel8.Controls.Add(this.lblIssuedBooksCount);
             this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(640, 440);
+            this.panel8.Location = new System.Drawing.Point(746, 436);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(300, 200);
             this.panel8.TabIndex = 15;
@@ -340,12 +348,68 @@ namespace UI
             this.label9.TabIndex = 11;
             this.label9.Text = "IssuedBooks";
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel10.Controls.Add(this.pictureBox6);
+            this.panel10.Controls.Add(this.lblReturnBooksCount);
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Location = new System.Drawing.Point(400, 312);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(300, 200);
+            this.panel10.TabIndex = 16;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(198, 31);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            // 
+            // lblReturnBooksCount
+            // 
+            this.lblReturnBooksCount.AutoSize = true;
+            this.lblReturnBooksCount.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReturnBooksCount.ForeColor = System.Drawing.Color.White;
+            this.lblReturnBooksCount.Location = new System.Drawing.Point(30, 50);
+            this.lblReturnBooksCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReturnBooksCount.Name = "lblReturnBooksCount";
+            this.lblReturnBooksCount.Size = new System.Drawing.Size(31, 34);
+            this.lblReturnBooksCount.TabIndex = 12;
+            this.lblReturnBooksCount.Text = "0";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Blue;
+            this.panel11.Controls.Add(this.label6);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(0, 159);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(300, 41);
+            this.panel11.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(50, 3);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(216, 34);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "ReturnedBooks";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -379,6 +443,11 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -386,7 +455,6 @@ namespace UI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
@@ -409,5 +477,11 @@ namespace UI
         private System.Windows.Forms.Label lblIssuedBooksCount;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblReturnBooksCount;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label6;
     }
 }
